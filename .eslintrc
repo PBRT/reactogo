@@ -1,0 +1,100 @@
+{
+  // TODO: very basic initial setup.
+  // most of the deactivated options (0) should become activated and the related code updated
+
+  "ecmaFeatures": {
+    "jsx": true,
+    "modules": true
+  },
+  "env": {
+    "amd": true,
+    "browser": true,
+    "es6": true,
+    "jquery": true,
+    "jasmine": true,
+    "node": true
+  },
+  "globals": {
+    "__VERSION__": true,
+    "__APIURL__": true,
+    "__HERMESURL__": true,
+    "__ZEUSURL__": true,
+    "__TESTABLE__": true,
+    "__STRIPEKEY__": true,
+    "__CLOUDINARYNAME__": true,
+    "__CREDENTIALS__": true,
+    "module": true,
+    "exports": true,
+    "_": true,
+    "$": true,
+    "analytics": true,
+    "React": true,
+    "UI": true,
+  },
+  "plugins": [
+    "react"
+  ],
+  "rules": {
+    "strict": 0, // best would be: [2, "global"]
+    "comma-dangle": 0,
+    "no-use-before-define": [2, "nofunc"],
+    "no-undef": 2,
+    "no-undef-init": 2,
+    "no-undefined": 0,
+    "no-unused-vars": 2,
+    "no-cond-assign": 2,
+    "no-trailing-spaces": 2,
+    "no-debugger": 2,
+    "no-eq-null": 1,
+    "no-eval": 2,
+    "no-new-func": 2,
+    "no-unused-expressions": 2,
+    "no-iterator": 2,
+    "no-unreachable": 2,
+    "no-multi-str": 2,
+    "no-loop-func": 1,
+    "no-proto": 2,
+    "no-script-url": 2,
+    "no-shadow": 0,
+    "no-sparse-arrays": 2,
+    "no-underscore-dangle": 0,
+    "no-new-func": 2,
+    "consistent-return": 0,
+    "curly": 1,
+    "eqeqeq": 1,
+    "guard-for-in": 1,
+    "wrap-iife": [2, "any"],
+    "no-caller": 2,
+    "camelcase": 0,
+    "indent": [2, 2],
+    "new-cap": 0,
+    "space-infix-ops": 0,
+    "key-spacing": 0,
+    "eol-last": 2,
+    "quotes": [2, "single", "avoid-escape"],
+    "semi": [2, "always"],
+    "max-len": [1, 120, 4],
+    "vars-on-top": 0, // should be true later
+    "dot-notation": 0, // could be: [2, {"allowPattern": "^[a-z0-9]+(_[a-z0-9]+)+$"}],
+
+    // react
+    "react/display-name": 0,
+    "react/jsx-boolean-value": 0,
+    "react/jsx-no-undef": 0,
+    "react/jsx-quotes": 0,
+    "react/jsx-sort-prop-types": 0,
+    "react/jsx-sort-props": 0,
+    "react/jsx-uses-react": 0,
+    "react/jsx-uses-vars": 1,
+    "react/no-did-mount-set-state": 0,
+    "react/no-did-update-set-state": 0,
+    "react/no-multi-comp": 0,
+    "react/no-unknown-property": 0,
+    "react/prop-types": 0,
+    "react/react-in-jsx-scope": 0,
+    "react/require-extension": 0,
+    "react/self-closing-comp": 0,
+    "react/sort-comp": 0,
+    "react/wrap-multilines": 0
+  }
+}

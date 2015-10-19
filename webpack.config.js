@@ -10,14 +10,14 @@ var providePlugin = new Webpack.ProvidePlugin({
   'window.jQuery': 'jquery',
   'jQuery': 'jquery',
   '_': 'underscore',
-  UI: path.resolve(__dirname, './client/style/UI.js'),
+  UI: '!stylus-export-loader!' + path.resolve(__dirname, './client/style/variables.styl'),
 });
 
 var config = {
 
   entry: ['./client/app.jsx'],
   output: {
-    path: __dirname,
+    path: path.resolve(__dirname, 'dist', 'public'),
     filename: 'bundle.js'
   },
   module: {
@@ -27,7 +27,7 @@ var config = {
       { test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/},
       { test: /\.(png|jpg|svg)?$/, loader: 'file-loader', exclude: /node_modules/},
       { test: /\.otf$/, loader: 'file-loader', exclude: /node_modules/},
-      { test: /\.(styl|css)$/, loader: 'style-loader!css-loader!stylus-loader', exclude: /(node_modules)/},
+      { test: /\.(styl|css)$/, loader: 'style-loader!css-loader!stylus-loader' , exclude: /(node_modules)/},
     ]
   },
   plugins: [

@@ -1,0 +1,63 @@
+{
+  "name": "reactogo",
+  "version": "1.0.0",
+  "description": "Kickstarter with react and webpack",
+  "main": "app.js",
+  "scripts": {
+    "test": "test",
+    "build": "gulp build",
+    "start": "node server/start.js",
+    "local": "gulp build:development",
+    "postinstall": "gulp build"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/PBRT/reactogo.git"
+  },
+  "author": "PBRT",
+  "license": "ISC",
+  "devDependencies": {
+    "webpack-dev-server": "^1.10.1"
+  },
+  "dependencies": {
+    "babel-core": "^5.8.23",
+    "babel-loader": "^5.3.2",
+    "body-parser": "^1.14.1",
+    "bootstrap": "^3.3.5",
+    "bootstrap-styl": "^4.0.5",
+    "bootstrap-webpack": "0.0.3",
+    "chart.js": "^1.0.2",
+    "colors": "^1.1.2",
+    "compression": "^1.6.0",
+    "css-loader": "^0.17.0",
+    "del": "^2.0.2",
+    "ejs": "^2.3.4",
+    "eslint": "^1.3.1",
+    "eslint-loader": "^1.0.0",
+    "eslint-plugin-react": "^3.3.1",
+    "express": "^4.13.3",
+    "fastclick": "^1.0.6",
+    "file-loader": "^0.8.4",
+    "gulp": "^3.9.0",
+    "gulp-load-plugins": "^1.0.0",
+    "gulp-util": "^3.0.6",
+    "imports-loader": "^0.6.4",
+    "jquery": "^2.1.4",
+    "mandrill-api": "^1.0.45",
+    "react": "^0.13.3",
+    "react-bootstrap": "^0.25.2",
+    "react-chartjs": "^0.6.0",
+    "react-masonry-component": "^1.0.4",
+    "react-modal": "^0.5.0",
+    "react-motion": "^0.3.0",
+    "serve-favicon": "^2.3.0",
+    "style-loader": "^0.12.3",
+    "stylus": "^0.52.4",
+    "stylus-export-loader": "git+https://git@github.com/PBRT/stylus-export-loader.git",
+    "stylus-loader": "^1.2.1",
+    "underscore": "^1.8.3",
+    "url-loader": "^0.5.6",
+    "velocity-animate": "^1.2.2",
+    "webpack": "^1.12.2"
+  }
+}

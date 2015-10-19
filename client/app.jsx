@@ -41,10 +41,10 @@ class App extends React.Component {
     };
   }
   isMobile() {
-    return (window.innerWidth < UI.breakpoints.mobile);
+    return (window.innerWidth < UI.breakpointM);
   }
   isTablet() {
-    return (!this.isMobile() && (window.innerWidth < UI.breakpoints.tablet));
+    return (!this.isMobile() && (window.innerWidth < UI.breakpointT));
   }
   isDesktop() {
     return (!this.isMobile() && !this.isTablet());

@@ -5,15 +5,11 @@ var s = getStyle();
 export default class ButtonMotion extends React.Component {
   constructor() {
     super();
-    this.state = {
-      isHover: false,
-    };
+    this.state = {isHover: false};
     this.handleHover = this.handleHover.bind(this);
     this.getSpringProps = this.getSpringProps.bind(this);
   }
-  handleHover(active) {
-    this.setState({isHover: active});
-  }
+  handleHover(active) {this.setState({isHover: active}); }
   getSpringProps() {
     return {
       defaultStyle: {
@@ -35,7 +31,7 @@ export default class ButtonMotion extends React.Component {
               onMouseEnter={this.handleHover.bind(null, true)}
               onMouseLeave={this.handleHover.bind(null, false)}
               style={_.extend(this.context.s(s.container), {opacity: interpolatedStyle.opacity})}>
-              <a href='http://github.com' target='_blank' style={_.extend(this.context.s(s.button), {
+              <a href='http://github.com/pbrt/reactogo' target='_blank' style={_.extend(this.context.s(s.button), {
                 transform: 'scale(' + interpolatedStyle.scale + ')',
               })}>Check source code</a>
             </div>
@@ -85,3 +81,6 @@ function getStyle() {
 ButtonMotion.contextTypes = {
   s: React.PropTypes.func.isRequired,
 };
+
+ButtonMotion.displayName = 'ButtonMotion';
+

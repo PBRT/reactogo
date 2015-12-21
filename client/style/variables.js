@@ -6,5 +6,7 @@ module.exports = {
 	"fontSM": "10",
 	"fontMD": "14",
 	"fontLG": "18",
-	"fontXL": "22"
+	"fontXL": "22",
+	"lightWhite": "#ecf0f1",
+	"lightDark": "#2c3e50"
 };

@@ -5,6 +5,7 @@ Kickstater project for quickly build your SAP including the last features of the
   * [Webpack building and webpack dev server](http://webpack.github.io/)
   * [Stylus export loader] (https://github.com/PBRT/stylus-export-loader)
   * [React](https://facebook.github.io/react/)
+  * [React Router](https://github.com/rackt/react-router)
   * [React Motion](https://github.com/chenglou/react-motion)
   * [VelocityJS](http://julian.com/research/velocity/)
   * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
@@ -34,6 +35,7 @@ And go to `http://localhost:3000`in your favourite browser. It will start the ``
   * Stylus: There is a default font and class in the `style` folder you can use
   * Images: Webpack handle the loading of all your images and files : `file-loader` 
   * VelocityJS: Powerful animation lib to give life
+  * React Router: Handle basic navigation between pages
   * ReactMotion: Physical animation lib
   * UI Kit: the `UI.js` file is included globally. You can access to the value with `UI`. It contain all the JS var needed to build your UI kit (breakpoints, animations, size...)
   * Media Queries: Part of the `app.jsx` file and then included in the global context, you can access to them thanks to the context object in all the childs. Check the Button example. 
@@ -59,4 +61,5 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
 
   * Build the main component in an isomorphic way to be SEO friendly
   * Add a MongoDB database
+  * Implement Redux architecture
 

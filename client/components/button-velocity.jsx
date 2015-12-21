@@ -1,4 +1,6 @@
-var s = getStyle();
+import ReactDOM from 'react-dom';
+
+let s = getStyle();
 
 // Main class - App
 export default class ButtonVelocity extends React.Component {
@@ -7,7 +9,8 @@ export default class ButtonVelocity extends React.Component {
     this.handleHover = this.handleHover.bind(this);
   }
   handleHover(active) {
-    $(React.findDOMNode(this)).velocity({
+    $(ReactDOM.findDOMNode(this)).velocity('stop');
+    $(ReactDOM.findDOMNode(this)).velocity({
       scale: active ? 1.4 : 1,
       opacity: active ? 0.7 : 1}, {duration: 400, easing: 'easeIn'});
   }
@@ -17,7 +20,7 @@ export default class ButtonVelocity extends React.Component {
         onMouseEnter={this.handleHover.bind(null, true)}
         onMouseLeave={this.handleHover.bind(null, false)}
         style={this.context.s(s.container)}>
-        <a href='http://github.com' target='_blank' style={this.context.s(s.button)}>Check source code</a>
+        <a href='http://github.com/pbrt/reactogo' target='_blank' style={this.context.s(s.button)}>Check source code</a>
       </div>
     );
   }

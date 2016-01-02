@@ -66,7 +66,7 @@
     "wrap-iife": [2, "any"],
     "no-caller": 2,
     "camelcase": 0,
-    "indent": [2, 2],
+    "indent": [2, 2, {"SwitchCase": 1}],
     "new-cap": 0,
     "space-infix-ops": 0,
     "key-spacing": 0,

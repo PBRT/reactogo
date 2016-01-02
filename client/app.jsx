@@ -5,12 +5,26 @@ import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
 import createBrowserHistory from 'history/lib/createBrowserHistory';
 
+// Redux
+import thunk from 'redux-thunk';
+import promise from 'redux-promise';
+import createLogger from 'redux-logger';
+import { createStore, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import todoApp from './reducers/todos.js';
+
 // Pages
-import About from './pages/about.jsx';
-import Home from './pages/home.jsx';
-import Contact from './pages/contact.jsx';
-import NotFound from './pages/not-found.jsx';
-import Index from './pages/index.jsx';
+import About from './containers/about.jsx';
+import Home from './containers/home.jsx';
+import Contact from './containers/contact.jsx';
+import NotFound from './containers/not-found.jsx';
+import Index from './containers/index.jsx';
+import Todos from './containers/Todos/todos.jsx';
+
+// TODOS
+const logger = createLogger();
+const createStoreWithMiddleware = applyMiddleware(thunk, promise, logger)(createStore);
+let store = createStoreWithMiddleware(todoApp);
 
 // Main class - App
 class App extends React.Component {
@@ -104,6 +118,7 @@ class App extends React.Component {
           <Route path='/home' component={Home}/>
           <Route path='/contact' component={Contact}/>
           <Route path='/about' component={About}/>
+          <Route path='/todos' component={Todos}/>
         </Route>
         <Route path='*' component={NotFound}/>
       </Router>
@@ -120,4 +135,4 @@ App.childContextTypes = {
   s: React.PropTypes.func.isRequired,
 };
 
-ReactDOM.render(<App/>, document.getElementById('app'));
+ReactDOM.render(<Provider store={store}><App/></Provider>, document.getElementById('app'));

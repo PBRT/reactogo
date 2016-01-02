@@ -7,6 +7,7 @@ let Index = (props) =>
     <div style={s.container}>
       <div style={s.logo}><Link to='home'>ReacToGo</Link></div>
       <div style={s.links}>
+        <div style={s.link}><Link to='todos'>Todos</Link></div>
         <div style={s.link}><Link to='about'>About</Link></div>
         <div style={s.link}><Link to='contact'>Contact</Link></div>
       </div>

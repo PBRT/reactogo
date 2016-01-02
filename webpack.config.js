@@ -20,6 +20,7 @@ var config = {
     path: path.resolve(__dirname, 'dist', 'public'),
     filename: 'bundle.js'
   },
+  devtool: 'source-map',
   module: {
     loaders: [
       { test: /\.(js|jsx)?$/, loader: 'babel', exclude: /(node_modules)/, query: { presets:['es2015', 'react']}},

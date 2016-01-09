@@ -1,4 +1,4 @@
-import Todo from '../components/Todo.jsx';
+import Todo from 'Todo.jsx';
 let s = getStyle();
 
 let TodoList = (props) => (

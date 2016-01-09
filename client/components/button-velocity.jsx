@@ -1,4 +1,5 @@
 import ReactDOM from 'react-dom';
+import { handleStyle } from 'style.js';
 
 let s = getStyle();
 
@@ -19,8 +20,8 @@ export default class ButtonVelocity extends React.Component {
       <div
         onMouseEnter={this.handleHover.bind(null, true)}
         onMouseLeave={this.handleHover.bind(null, false)}
-        style={this.context.s(s.container)}>
-        <a href='http://github.com/pbrt/reactogo' target='_blank' style={this.context.s(s.button)}>Check source code</a>
+        style={handleStyle(s.container)}>
+        <a href='http://github.com/pbrt/reactogo' target='_blank' style={handleStyle(s.button)}>Check source code</a>
       </div>
     );
   }
@@ -61,7 +62,3 @@ function getStyle() {
     },
   };
 }
-
-ButtonVelocity.contextTypes = {
-  s: React.PropTypes.func.isRequired,
-};

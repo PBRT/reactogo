@@ -1,4 +1,6 @@
 import {spring, Motion} from 'react-motion';
+import { handleStyle } from 'style.js';
+
 var s = getStyle();
 
 // Main class - App
@@ -30,8 +32,8 @@ export default class ButtonMotion extends React.Component {
             <div
               onMouseEnter={this.handleHover.bind(null, true)}
               onMouseLeave={this.handleHover.bind(null, false)}
-              style={_.extend(this.context.s(s.container), {opacity: interpolatedStyle.opacity})}>
-              <a href='http://github.com/pbrt/reactogo' target='_blank' style={_.extend(this.context.s(s.button), {
+              style={_.extend(handleStyle(s.container), {opacity: interpolatedStyle.opacity})}>
+              <a href='http://github.com/pbrt/reactogo' target='_blank' style={_.extend(handleStyle(s.button), {
                 transform: 'scale(' + interpolatedStyle.scale + ')',
               })}>Check source code</a>
             </div>
@@ -77,10 +79,6 @@ function getStyle() {
     },
   };
 }
-
-ButtonMotion.contextTypes = {
-  s: React.PropTypes.func.isRequired,
-};
 
 ButtonMotion.displayName = 'ButtonMotion';
 

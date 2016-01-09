@@ -38,6 +38,9 @@ var config = {
       'node_modules/',
       'utils/',
       'components/',
+      './client/actions',
+      './client/store',
+      './client/globals'
     ],
   },
 };

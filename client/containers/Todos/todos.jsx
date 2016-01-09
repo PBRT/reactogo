@@ -1,4 +1,4 @@
-import { addTodo, setVisibilityFilter, completeTodo, VisibilityFilters } from '../../actions/todos.js';
+import { addTodo, setVisibilityFilter, completeTodo, VisibilityFilters } from 'todos.js';
 
 import AddTodo from './components/AddTodo.jsx';
 import TodoList from './components/TodoList.jsx';
@@ -49,7 +49,7 @@ function selectTodos(todos, filter) {
 function select(state) {
   return {
     visibleTodos: selectTodos(state.todos, state.visibilityFilter),
-    visibilityFilter: state.visibilityFilter
+    visibilityFilter: state.visibilityFilter,
   };
 }
 

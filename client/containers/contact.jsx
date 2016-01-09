@@ -1,3 +1,5 @@
+import { connect } from 'react-redux';
+
 let s = getStyle();
 
 let Contact = () =>
@@ -18,4 +20,4 @@ function getStyle() {
 }
 Contact.displayName = 'Contact';
 
-export default Contact;
+export default connect((state) => ({viewport: state.viewport}))(Contact);

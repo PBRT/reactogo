@@ -3,7 +3,6 @@ import 'bootstrap-webpack';
 import './style/app.styl';
 import ReactDOM from 'react-dom';
 import { Router, Route, IndexRoute } from 'react-router';
-// import createBrowserHistory from 'history/lib/createBrowserHistory';
 import { Provider } from 'react-redux';
 import { setViewport } from 'viewport.js';
 

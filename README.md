@@ -10,6 +10,8 @@ Kickstater project for quickly build your SAP including the last features of the
   * [Redux](http://redux.js.org/)
   * [VelocityJS](http://julian.com/research/velocity/)
   * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
+  * [Firebase Login](https://www.firebase.com)
+  * [React Modal](https://github.com/rackt/react-modal)
   * Global UI kit
   * Media queries with React Context
   * ExpressJS
@@ -41,6 +43,8 @@ And go to `http://localhost:3000`in your favourite browser. It will start the ``
   * UI Kit: the `UI.js` file is included globally. You can access to the value with `UI`. It contain all the JS var needed to build your UI kit (breakpoints, animations, size...)
   * Media Queries: Included in the global state of the app. Accessible with functions in ```globals/style.js```.
   * Data : Handle by Redux as a global state of the app. Check the model section underneath.
+  * Firebase facebook login
+  * React Modals
 
 ## UI Customisation
 
@@ -56,6 +60,13 @@ Thanks to redux and its middlewares, the app state contain everything needed to 
     * isDesktop: bool
     Used for handle the media queries with inline css. Theses state are handled in the ```reducers/viewport-reducer.js``` reducer. Each time the window is resized, a debounced function will dispatch the action and update the state. Hence, in each components connected with [React Redux](https://github.com/rackt/react-redux) will be re-render. This way, if you use the ```handleStyle``` function contained in the ```globals/style.js``` you can describe in inline css the style of your component on three differents viewports. Check the function for more informations
   * Todos: Model for the Todos example. More detail at the [Redux Tutorial Page](http://redux.js.org/docs/basics/index.html)
+  * Session: 
+    * Token: auth token by Firebase
+    * uid: User id
+    * provider: facebook
+    * user: User info from facebool
+  * Modals:
+    * isLoginModalOpen: bool
 
 ## Redux Librairies
 
@@ -82,6 +93,5 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
 ## TO DO
 
   * Build the main component in an isomorphic way to be SEO friendly
-  * OAUTH with Firebase
   * Production store configuration
 

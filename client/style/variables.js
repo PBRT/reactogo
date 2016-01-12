@@ -9,5 +9,6 @@ module.exports = {
 	"fontXL": "22",
 	"fontXXL": "30",
 	"lightWhite": "#ecf0f1",
-	"lightDark": "#2c3e50"
+	"lightDark": "#2c3e50",
+	"lightBlue": "#2980b9"
 };

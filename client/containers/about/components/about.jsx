@@ -13,8 +13,8 @@ let About = () =>
 function getStyle() {
   return {
     container: {
-      marginTop: 100,
       textAlign: 'center',
+      marginTop: 60,
     },
   };
 }

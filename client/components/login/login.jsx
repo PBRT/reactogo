@@ -25,7 +25,7 @@ let Login = (props) => {
       <div
         className='light-white'
         onClick={() => dispatch(openModal())}
-        style={s.navbarItem}>Login</div>
+        style={Object.assign({}, s.navbarItem, props.itemStyle ? props.itemStyle : {})}>Login</div>
     </div>
   );
 };
@@ -33,7 +33,6 @@ let Login = (props) => {
 function getStyle() {
   return {
     container: {
-      marginTop: 100,
       textAlign: 'center',
       margin: '100px auto',
     },

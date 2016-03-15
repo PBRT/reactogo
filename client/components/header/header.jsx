@@ -7,6 +7,7 @@ import Login from 'login/login.jsx';
 
 // Actions
 import { logout } from 'auth/login.js';
+import { openSideMenu } from 'side-menu.js';
 
 let s = getStyle();
 
@@ -17,18 +18,18 @@ let Header = (props) =>
         <span className='light-white'>ReacToGo</span>
       </Link>
     </div>
-    <div style={s.links}>
-      <div style={s.link}>
-        <Link to='about'>
+    {!props.viewport.get('isMobile') ?<div style={s.links}>
+      <div style={s.link} className='flex flex-center'>
+        <Link to='about' style={s.anchorLink}>
           <span className='light-white'>About</span>
         </Link>
       </div>
-      <div style={s.link}>
-        <Link to='fetch-example'>
+      <div style={s.link} className='flex flex-center'>
+        <Link to='fetch-example' style={s.anchorLink}>
           <span className='light-white'>Fetch data</span>
         </Link>
       </div>
-      {props.session.get('isLoggedIn') ? <div className='flex'>
+      {props.session.get('isLoggedIn') ? <div className='flex flex-center'>
         <div
           onClick={() => props.dispatch(logout())}
           style={s.link}
@@ -37,7 +38,12 @@ let Header = (props) =>
           <img style={s.profileImage} src={props.session.get('user').get('profileImageURL')} />
         </div>
       </div>: <Login />}
-    </div>
+    </div> :
+    <div className='flex-1 text-right' style={s.menuIcon}>
+      <i
+        onClick={() => props.dispatch(openSideMenu())}
+        className='icon-menu light-white cursor'></i>
+    </div>}
   </div>);
 
 
@@ -45,13 +51,14 @@ function getStyle() {
   return {
     container: {
       width: '100%',
-      height: 60,
+      height: UI.headerHeight,
       backgroundColor: UI.lightGreen,
       display: 'flex',
       alignItems: 'center',
       boxShadow: '0px 0px 2px 0px rgba(0,0,0,0.3)',
       position: 'fixed',
       zIndex: 1,
+      top: 0,
     },
     logo: {
       flex: 'initial',
@@ -65,7 +72,6 @@ function getStyle() {
       justifyContent: 'flex-end',
     },
     link: {
-      padding: 20,
       cursor: 'pointer',
     },
     profileContainer: {
@@ -75,6 +81,12 @@ function getStyle() {
     profileImage: {
       borderRadius: 100,
       width: 40,
+    },
+    menuIcon: {
+      marginRight: 20,
+    },
+    anchorLink: {
+      padding: 20,
     },
   };
 }

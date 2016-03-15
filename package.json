@@ -66,6 +66,7 @@
     "redux-promise": "0.5.0",
     "redux-thunk": "1.0.3",
     "serve-favicon": "2.3.0",
+    "slideout": "^0.1.12",
     "style-loader": "0.12.3",
     "stylus": "0.52.4",
     "stylus-export-loader": "git+https://git@github.com/PBRT/stylus-export-loader.git",

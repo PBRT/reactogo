@@ -12,7 +12,6 @@ let NotFound = () =>
 function getStyle() {
   return {
     container: {
-      marginTop: 100,
     },
   };
 }

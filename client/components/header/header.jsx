@@ -23,6 +23,11 @@ let Header = (props) =>
           <span className='light-white'>About</span>
         </Link>
       </div>
+      <div style={s.link}>
+        <Link to='fetch-example'>
+          <span className='light-white'>Fetch data</span>
+        </Link>
+      </div>
       {props.session.get('isLoggedIn') ? <div className='flex'>
         <div
           onClick={() => props.dispatch(logout())}

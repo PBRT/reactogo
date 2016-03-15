@@ -15,6 +15,8 @@ Kickstater project for quickly build your SAP including the last features of the
   * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
   * [Firebase](https://www.firebase.com)
   * [React Modal](https://github.com/rackt/react-modal)
+  * [Fontastic Icons](http://fontastic.me/)
+  * [Fetch API](https://github.com/github/fetch)
   * Global UI kit
   * ExpressJS
 

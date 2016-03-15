@@ -11,7 +11,7 @@ let Home = () =>
   (<div style={s.container}>
     <h1 className='text-center light-blue' style={s.title}>reacToGO</h1>
     <h2 className='text-center'>
-      Including webpack, react, react-router, ImmutableJS, redux, velocity, reactmotion, bootstrap, stylus
+      Including webpack, react, react-router, ImmutableJS, redux, velocity, reactmotion, bootstrap, stylus, Fetch API
     </h2>
     <div className='row no-padding' style={s.row}>
       <div className='col-xs-3 col-xs-offset-3 no-padding'>

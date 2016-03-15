@@ -12,6 +12,8 @@ var providePlugin = new Webpack.ProvidePlugin({
   'jQuery': 'jquery',
   '_': 'underscore',
   UI: '!stylus-export-loader!' + path.resolve(__dirname, './client/style/variables.styl'),
+  'es6-promise': 'es6-promise',
+  fetch: 'imports?this=>global!exports?global.fetch!whatwg-fetch',
 });
 
 var config = {

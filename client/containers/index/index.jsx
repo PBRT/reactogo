@@ -17,6 +17,7 @@ let Index = (props) =>
 
 Index.displayName = 'Index';
 
+
 export default connect((state) => ({
   currentPath: state.get('routing').get('locationBeforeTransitions').get('pathname'),
 }))(Index);

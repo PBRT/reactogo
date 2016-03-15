@@ -1,10 +1,12 @@
 // Libs
 import { connect } from 'react-redux';
-import Modal from 'react-modal';
 
 // Actions
 import { openModal, closeModal } from 'modals.js';
 import { login } from 'login.js';
+
+// Components
+import ModalContainer from 'modal-container/modal-container.jsx';
 
 let s = getStyle();
 
@@ -13,18 +15,15 @@ let Login = (props) => {
   const { isModalOpen, dispatch } = props;
   return (
     <div>
-      <Modal
-        className='Modal__Bootstrap modal-dialog'
-        isOpen={isModalOpen}
-        style={{overlay: {backgroundColor: 'none', overflow: 'hidden'}}}>
-          <div style={s.container}>
-            <img style={s.close} src={require('./assets/close.png')} onClick={() => dispatch(closeModal())}/>
-            <div
-              onClick={() => dispatch(login())}
-              style={s.button}>Login with Facebook</div>
-          </div>
-      </Modal>
+      <ModalContainer isModalOpen={isModalOpen} closeModal={() => dispatch(closeModal())}>
+        <div style={s.container} className='light-white'>
+          <div
+            onClick={() => dispatch(login())}
+            style={s.button}>Login with Facebook</div>
+        </div>
+      </ModalContainer>
       <div
+        className='light-white'
         onClick={() => dispatch(openModal())}
         style={s.navbarItem}>Login</div>
     </div>
@@ -36,7 +35,6 @@ function getStyle() {
     container: {
       marginTop: 100,
       textAlign: 'center',
-      color: UI.lightWhite,
       margin: '100px auto',
     },
     button: {
@@ -55,7 +53,6 @@ function getStyle() {
       top: 20,
       right: 20,
       width: 12,
-      cursor: 'pointer',
     },
   };
 }

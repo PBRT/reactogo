@@ -9,9 +9,17 @@ let s = getStyle();
 
 let Header = (props) =>
   (<div style={s.container}>
-    <div style={s.logo}><Link to='/'>ReacToGo</Link></div>
+    <div style={s.logo}>
+      <Link to='/'>
+        <span className='light-white'>ReacToGo</span>
+      </Link>
+    </div>
     <div style={s.links}>
-      <div style={s.link}><Link to='about'>About</Link></div>
+      <div style={s.link}>
+        <Link to='about'>
+          <span className='light-white'>About</span>
+        </Link>
+      </div>
       {props.session.get('isLoggedIn') ? <div style={s.profileContainer}>
         <img style={s.profileImage} src={props.session.get('user').get('profileImageURL')} />
       </div> : <Login />}
@@ -24,9 +32,12 @@ function getStyle() {
     container: {
       width: '100%',
       height: 60,
-      backgroundColor: UI.lightWhite,
+      backgroundColor: UI.lightGreen,
       display: 'flex',
       alignItems: 'center',
+      boxShadow: '0px 0px 2px 0px rgba(0,0,0,0.3)',
+      position: 'fixed',
+      zIndex: 1,
     },
     logo: {
       flex: 'initial',

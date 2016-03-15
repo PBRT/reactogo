@@ -2,6 +2,7 @@
 import 'velocity-animate';
 import 'bootstrap-webpack';
 import './style/app.styl';
+import './style/icon/styles.css';
 
 // Actions
 import { setViewport } from 'viewport.js';

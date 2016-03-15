@@ -6,6 +6,8 @@
   overflow-y auto
   background-color rgba(0, 0, 0, 0.5)
   z-index: 1000
+  display: flex
+  align-items: center
 
 
 .ReactModal__Overlay--after-open
@@ -36,3 +38,9 @@
 .ReactModal__Content.modal-dialog
   border none
   background-color transparent
+
+.ReactModal__Body--open
+  overflow: hidden
+
+.ReactModal__Body--close
+  overflow: visible

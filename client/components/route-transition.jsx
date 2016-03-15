@@ -46,6 +46,7 @@ export default class RouteTransition extends React.Component {
                 key={`${key}-transition`}
                 style={{
                   width: '100%',
+                  top: 60,
                   position: 'absolute',
                   opacity: interpolated[key].opacity,
                   transform: `translate3d(0px, ${interpolated[key].position}px, 0px)`

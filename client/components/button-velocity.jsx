@@ -14,9 +14,7 @@ export default class ButtonVelocity extends React.Component {
   }
   handleHover(active) {
     $(ReactDOM.findDOMNode(this)).velocity('stop');
-    $(ReactDOM.findDOMNode(this)).velocity({
-      scale: active ? 1.4 : 1,
-      opacity: active ? 0.7 : 1}, {duration: 400, easing: 'easeIn'});
+    $(ReactDOM.findDOMNode(this)).velocity({scale: active ? 1.4 : 1}, {duration: 200, easing: 'easeIn'});
   }
   render() {
     return (
@@ -24,7 +22,12 @@ export default class ButtonVelocity extends React.Component {
         onMouseEnter={this.handleHover.bind(null, true)}
         onMouseLeave={this.handleHover.bind(null, false)}
         style={handleStyle(s.container)}>
-        <a href='http://github.com/pbrt/reactogo' target='_blank' style={handleStyle(s.button)}>Check source code</a>
+        <a
+          href='http://github.com/pbrt/reactogo'
+          target='_blank'
+          className='button button-info'>
+            <span className='light-white'>Check source code</span>
+        </a>
       </div>
     );
   }
@@ -39,25 +42,6 @@ function getStyle() {
       },
       desktop: {
         marginTop: 30,
-      },
-    },
-    button: {
-      textAlign: 'center',
-      backgroundColor: '#e74c3c',
-      padding: '10px 20px',
-      borderRadius: 3,
-      cursor: 'pointer',
-      color: 'white',
-      display: 'inline-block',
-      textDecoration: 'none',
-      fontSize: 12,
-      tablet: {
-        padding: '20px 30px',
-        fontSize: 14,
-      },
-      desktop: {
-        padding: '20px 30px',
-        fontSize: 16,
       },
     },
     row: {

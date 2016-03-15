@@ -32,7 +32,7 @@ var config = {
       },
       { test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/},
       { test: /\.(png|jpg|svg)?$/, loader: 'file-loader', exclude: /node_modules/},
-      { test: /\.otf$/, loader: 'file-loader', exclude: /node_modules/},
+      { test: /\.(otf|eot|woff|ttf)$/, loader: 'file-loader', exclude: /node_modules/},
       { test: /\.(styl|css)$/, loader: 'style-loader!css-loader!stylus-loader', exclude: /(node_modules)/},
     ]
   },

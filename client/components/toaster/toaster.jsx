@@ -48,7 +48,7 @@ class Toaster extends React.Component {
 
     return <div style={s.container}>
       {this.state.list.map(item =>
-        <div key={item.id} style={getToastStyle(item.type)} ref={`item-${item.id}`}>
+        <div key={item.id} style={getToastStyle(item.type)} className='light-white' ref={`item-${item.id}`}>
           {item.text}
           <i
             onClick={() => this.props.dispatch(removeMessage(item.id))}
@@ -70,7 +70,6 @@ function getStyle() {
     },
     item: {
       backgroundColor: UI.lightGreen,
-      color: UI.lightWhite,
       textAlign: 'left',
       marginBottom: 20,
       opacity: 0,

@@ -29,6 +29,11 @@ let Header = (props) =>
           <span className='light-white'>Fetch data</span>
         </Link>
       </div>
+      <div style={s.link} className='flex flex-center'>
+        <Link to='nested-example' style={s.anchorLink}>
+          <span className='light-white'>Nested Routes</span>
+        </Link>
+      </div>
       {props.session.get('isLoggedIn') ? <div className='flex flex-center'>
         <div
           onClick={() => props.dispatch(logout())}

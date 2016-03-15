@@ -25,6 +25,7 @@ export default class SideMenu extends React.Component {
           <div style={s.group}>
             <Item item={{path: 'about', value: 'About'}} />
             <Item item={{path: 'fetch-example', value: 'Fetch Example'}} />
+            <Item item={{path: 'nested-example', value: 'Nested Example'}} />
           </div>
           <div style={s.group}>
             {this.props.session.get('isLoggedIn') ? <div

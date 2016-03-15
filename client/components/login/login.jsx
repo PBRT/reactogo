@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 // Actions
 import { openModal, closeModal } from 'modals.js';
-import { login } from 'login.js';
+import { login } from 'auth/login.js';
 
 // Components
 import ModalContainer from 'modal-container/modal-container.jsx';

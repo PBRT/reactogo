@@ -1,4 +1,4 @@
-import { SUCCESS_LOGIN, FAIL_LOGIN } from 'login.js';
+import { SUCCESS_LOGIN, FAIL_LOGIN, SUCCESS_LOGOUT } from 'auth/login.js';
 
 const intialState = Immutable.Map({
   token: null,
@@ -23,6 +23,7 @@ function login(state = intialState, action) {
       }),
     });
     case (FAIL_LOGIN): return intialState;
+    case (SUCCESS_LOGOUT): return intialState;
     default: return state;
   }
 };

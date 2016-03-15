@@ -5,6 +5,9 @@ import { Link } from 'react-router';
 // Components
 import Login from 'login/login.jsx';
 
+// Actions
+import { logout } from 'auth/login.js';
+
 let s = getStyle();
 
 let Header = (props) =>
@@ -20,9 +23,15 @@ let Header = (props) =>
           <span className='light-white'>About</span>
         </Link>
       </div>
-      {props.session.get('isLoggedIn') ? <div style={s.profileContainer}>
-        <img style={s.profileImage} src={props.session.get('user').get('profileImageURL')} />
-      </div> : <Login />}
+      {props.session.get('isLoggedIn') ? <div className='flex'>
+        <div
+          onClick={() => props.dispatch(logout())}
+          style={s.link}
+          className='light-white cursor'>Logout</div>
+        <div style={s.profileContainer}>
+          <img style={s.profileImage} src={props.session.get('user').get('profileImageURL')} />
+        </div>
+      </div>: <Login />}
     </div>
   </div>);
 
@@ -53,7 +62,6 @@ function getStyle() {
     link: {
       padding: 20,
       cursor: 'pointer',
-      color: 'red',
     },
     profileContainer: {
       padding: '10px 20px',

@@ -5,6 +5,7 @@ var path = require('path');
 // Put React as a global variable
 var providePlugin = new Webpack.ProvidePlugin({
   'React': 'react',
+  'Immutable': 'immutable',
   $: 'jquery',
   'window.$': 'jquery',
   'window.jQuery': 'jquery',
@@ -23,7 +24,12 @@ var config = {
   devtool: 'source-map',
   module: {
     loaders: [
-      { test: /\.(js|jsx)?$/, loader: 'babel', exclude: /(node_modules)/, query: { presets:['es2015', 'react']}},
+      {
+        test:/\.(js|jsx)?$/,
+        loader: 'babel',
+        exclude: /(node_modules)/,
+        query: { presets:['es2015', 'react'], plugins: ['add-module-exports']}
+      },
       { test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/},
       { test: /\.(png|jpg|svg)?$/, loader: 'file-loader', exclude: /node_modules/},
       { test: /\.otf$/, loader: 'file-loader', exclude: /node_modules/},

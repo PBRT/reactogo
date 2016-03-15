@@ -1,6 +1,8 @@
+// Libs
 import { connect } from 'react-redux';
 import Modal from 'react-modal';
 
+// Actions
 import { openModal, closeModal } from 'modals.js';
 import { login } from 'login.js';
 
@@ -59,5 +61,7 @@ function getStyle() {
 }
 Login.displayName = 'Login';
 
-export default connect((state) => ({viewport: state.viewport, isModalOpen: state.modals.isLoginModalOpen}))(Login);
+export default connect((state) => ({
+  viewport: state.get('viewport'),
+  isModalOpen: state.get('modals').get('isLoginModalOpen')}))(Login);
 

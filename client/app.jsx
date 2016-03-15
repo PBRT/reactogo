@@ -1,21 +1,38 @@
+// Dependencies
 import 'velocity-animate';
 import 'bootstrap-webpack';
 import './style/app.styl';
-import ReactDOM from 'react-dom';
-import { Router, Route, IndexRoute } from 'react-router';
-import { Provider } from 'react-redux';
+
+// Actions
 import { setViewport } from 'viewport.js';
 
-// Pages
-import About from './containers/about.jsx';
-import Home from './containers/home.jsx';
-import Contact from './containers/contact.jsx';
-import NotFound from './containers/not-found.jsx';
-import Index from './containers/index.jsx';
-import Todos from './containers/Todos/todos.jsx';
+// Utils
+import ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import { Router, browserHistory } from 'react-router';
+import { syncHistoryWithStore } from 'react-router-redux';
+import { initializeStore } from './store/configureStore.js';
 
-import { initializeStore, history } from './store/configureStore.js';
+// Pages
+import Index from './containers/index/index.jsx';
+
+var FastClick = require('fastclick');
+FastClick.attach(document.body);
+
+const rootRoute = {
+  component: 'div',
+  childRoutes: [{
+    path: '/',
+    component: Index,
+    indexRoute: require('./containers/home/home.module.js'),
+    childRoutes: require('./containers/containers.module.js'),
+  }]
+};
+
 const store = initializeStore();
+const history = syncHistoryWithStore(browserHistory, store, {
+  selectLocationState: (state) => state.get('routing').toJS()
+});
 
 // Main class - App
 class App extends React.Component {
@@ -23,10 +40,6 @@ class App extends React.Component {
     super(props);
     this.handleResize = this.handleResize.bind(this);
     this.debouncedHandleResize = _.debounce(() => {this.handleResize(); }, 100);
-  }
-  isTouchDevice() {
-    return 'ontouchstart' in window // works on most browsers
-      || 'onmsgesturechange' in window; // works on ie10
   }
   handleResize() {
     store.dispatch(setViewport(window.innerWidth));
@@ -41,16 +54,7 @@ class App extends React.Component {
   render() {
     return (
       <Provider store={store}>
-        <Router history={history}>
-          <Route path='/' component={Index}>
-            <IndexRoute component={Home}/>
-            <Route path='/home' component={Home}/>
-            <Route path='/contact' component={Contact}/>
-            <Route path='/about' component={About}/>
-            <Route path='/todos' component={Todos}/>
-          </Route>
-          <Route path='*' component={NotFound}/>
-        </Router>
+        <Router history={history} routes={rootRoute} />
       </Provider>
     );
   }

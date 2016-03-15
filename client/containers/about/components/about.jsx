@@ -1,3 +1,4 @@
+// Libs
 import { connect } from 'react-redux';
 
 let s = getStyle();
@@ -20,5 +21,5 @@ function getStyle() {
 }
 About.displayName = 'About';
 
-export default connect((state) => ({viewport: state.viewport}))(About);
+export default connect((state) => ({viewport: state.get('viewport')}))(About);
 

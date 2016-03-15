@@ -3,24 +3,24 @@ import thunk from 'redux-thunk';
 import promise from 'redux-promise';
 import createLogger from 'redux-logger';
 import { createStore, applyMiddleware } from 'redux';
+
+// Reducers
 import appReducer from '../reducers/reducers.js';
-import { syncReduxAndRouter } from 'redux-simple-router';
+
+// Actions
 import { setViewport } from 'viewport.js';
 
-// Router
-import createBrowserHistory from 'history/lib/createBrowserHistory';
+
+const stateTransformer = (state) => state.toJS();
 
 let store;
-export const history = createBrowserHistory();
 
 export function initializeStore() {
 
-  const logger = createLogger();
+  const logger = createLogger({stateTransformer});
   const createStoreWithMiddleware = applyMiddleware(thunk, promise, logger)(createStore);
-  store = createStoreWithMiddleware(appReducer);
 
-  // Routing
-  syncReduxAndRouter(history, store);
+  store = createStoreWithMiddleware(appReducer);
   store.dispatch(setViewport(window.innerWidth));
 
   return store;

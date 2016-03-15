@@ -1,7 +1,11 @@
+// Libs
 import { connect } from 'react-redux';
 
+// Components
 import ButtonMotion from 'button-motion.jsx';
 import ButtonVelocity from 'button-velocity.jsx';
+
+// Utils
 import { handleStyle } from 'style.js';
 
 let s = getStyle();
@@ -10,7 +14,7 @@ let Home = () =>
   (<div style={s.container}>
     <div className='text-center title' style={handleStyle(s.title)}>reacToGO</div>
     <div className='text-center subtitle'>
-      Including webpack, react, react-router, velocity, reactmotion, bootstrap, stylus
+      Including webpack, react, react-router, ImmutableJS, redux, velocity, reactmotion, bootstrap, stylus
     </div>
     <div className='row no-padding' style={s.row}>
       <div className='col-xs-3 col-xs-offset-3 no-padding'>
@@ -47,4 +51,4 @@ function getStyle() {
 }
 Home.displayName = 'Home';
 
-export default connect((state) => ({viewport: state.viewport}))(Home);
+export default connect((state) => ({viewport: state.get('viewport')}))(Home);

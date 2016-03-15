@@ -17,17 +17,17 @@ export function getMobileStyle(styleObject) {
 
 
 export function handleStyle(style) {
-  const state = getStore().getState().viewport;
+  const state = getStore().getState().get('viewport');
 
   let mobile = getMobileStyle(style);
   let {tablet, desktop} = style;
   let responsiveStyle;
 
-  if (state.isMobile) {
+  if (state.get('isMobile')) {
     responsiveStyle = _.clone(mobile);
-  } else if (state.isTablet) {
+  } else if (state.get('isTablet')) {
     responsiveStyle = _.extend(_.clone(mobile), tablet);
-  } else if (state.isDesktop) {
+  } else if (state.get('isDesktop')) {
     responsiveStyle = _.extend(_.clone(mobile), _.clone(tablet), desktop);
   }
 

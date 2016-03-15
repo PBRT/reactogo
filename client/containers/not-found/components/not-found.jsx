@@ -1,3 +1,4 @@
+// Libs
 import { connect } from 'react-redux';
 
 let s = getStyle();
@@ -18,4 +19,4 @@ function getStyle() {
 }
 NotFound.displayName = 'NotFound';
 
-export default connect((state) => ({viewport: state.viewport}))(NotFound);
+export default connect((state) => ({viewport: state.get('viewport')}))(NotFound);

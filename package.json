@@ -17,6 +17,7 @@
   "author": "PBRT",
   "license": "ISC",
   "devDependencies": {
+    "babel-plugin-add-module-exports": "0.1.2",
     "webpack-dev-server": "1.10.1"
   },
   "dependencies": {
@@ -45,6 +46,7 @@
     "gulp-load-plugins": "1.0.0",
     "gulp-util": "3.0.6",
     "history": "1.13.0",
+    "immutable": "3.7.6",
     "imports-loader": "0.6.4",
     "isomorphic-fetch": "2.2.0",
     "jquery": "2.1.4",
@@ -55,11 +57,12 @@
     "react-motion": "0.3.0",
     "react-redux": "4.0.6",
     "react-router": "1.0.2",
+    "react-router-redux": "4.0.0",
     "redux": "3.0.5",
     "redux-devtools": "3.0.1",
+    "redux-immutable": "3.0.6",
     "redux-logger": "2.3.1",
     "redux-promise": "0.5.0",
-    "redux-simple-router": "1.0.2",
     "redux-thunk": "1.0.3",
     "serve-favicon": "2.3.0",
     "style-loader": "0.12.3",

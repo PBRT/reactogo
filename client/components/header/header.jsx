@@ -1,18 +1,19 @@
+// Libs
 import { connect } from 'react-redux';
 import { Link } from 'react-router';
-import Login from '../containers/login/login.jsx';
+
+// Components
+import Login from 'login/login.jsx';
 
 let s = getStyle();
 
 let Header = (props) =>
   (<div style={s.container}>
-    <div style={s.logo}><Link to='home'>ReacToGo</Link></div>
+    <div style={s.logo}><Link to='/'>ReacToGo</Link></div>
     <div style={s.links}>
-      <div style={s.link}><Link to='todos'>Todos</Link></div>
       <div style={s.link}><Link to='about'>About</Link></div>
-      <div style={s.link}><Link to='contact'>Contact</Link></div>
-      {props.session.isLoggedIn ? <div style={s.profileContainer}>
-        <img style={s.profileImage} src={props.session.user.profileImageURL} />
+      {props.session.get('isLoggedIn') ? <div style={s.profileContainer}>
+        <img style={s.profileImage} src={props.session.get('user').get('profileImageURL')} />
       </div> : <Login />}
     </div>
   </div>);
@@ -55,4 +56,7 @@ function getStyle() {
 }
 Header.displayName = 'Header';
 
-export default connect((state) => ({viewport: state.viewport, session: state.session}))(Header);
+export default connect((state) => ({
+  viewport: state.get('viewport'),
+  session: state.get('session')
+}))(Header);

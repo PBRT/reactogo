@@ -1,4 +1,7 @@
+// Libs
 import ReactDOM from 'react-dom';
+
+// Utils
 import { handleStyle } from 'style.js';
 
 let s = getStyle();

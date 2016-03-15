@@ -1,4 +1,7 @@
+// Libs
 import {spring, Motion} from 'react-motion';
+
+// Utils
 import { handleStyle } from 'style.js';
 
 var s = getStyle();

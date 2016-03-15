@@ -30,6 +30,7 @@
     "analytics": true,
     "React": true,
     "UI": true,
+    "Immutable": true,
   },
   "plugins": [
     "react"

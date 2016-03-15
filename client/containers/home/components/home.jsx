@@ -4,6 +4,7 @@ import { connect } from 'react-redux';
 // Components
 import ButtonMotion from 'button-motion.jsx';
 import ButtonVelocity from 'button-velocity.jsx';
+import Spinner from 'spinner/spinner.jsx';
 
 let s = getStyle();
 
@@ -23,6 +24,7 @@ let Home = () =>
         <ButtonVelocity />
       </div>
     </div>
+    <Spinner />
     <h2>Fork the project and run npm install</h2>
   </div>);
 

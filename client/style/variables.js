@@ -8,7 +8,14 @@ module.exports = {
 	"fontLG": "18",
 	"fontXL": "22",
 	"fontXXL": "30",
-	"lightWhite": "#ecf0f1",
+	"lightWhite": "#FFFFFF",
 	"lightDark": "#2c3e50",
-	"lightBlue": "#2980b9"
+	"lightBlue": "#2980b9",
+	"darkBlue": "#2980b9",
+	"lightRed": "#e74c3c",
+	"darkRed": "#c0392b",
+	"lightGreen": "#2ecc71",
+	"darkGreen": "#27ae60",
+	"lightYellow": "#f1c40f",
+	"darkYellow": "#f39c12"
 };

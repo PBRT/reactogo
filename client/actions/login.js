@@ -1,5 +1,7 @@
+// Actions
 import { getFirebaseInstance } from 'session.js';
 import { closeModal } from 'modals.js';
+import { pushMessage } from 'toaster.js';
 
 export const REQUEST_LOGIN = 'REQUEST_LOGIN';
 export const SUCCESS_LOGIN = 'SUCCESS_LOGIN';
@@ -16,8 +18,10 @@ export function login() {
     return firebaseRef.authWithOAuthPopup('facebook', (error, authData) => {
       if (error) {
         dispatch(failLogin(error));
+        dispatch(pushMessage('Oops, something went wrong', 'error'));
       } else {
         dispatch(sucessLogin(authData));
+        dispatch(pushMessage('Login Succesful', 'success'));
         dispatch(closeModal());
       }
     });

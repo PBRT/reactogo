@@ -3,10 +3,12 @@ import { connect } from 'react-redux';
 
 // Components
 import Header from 'header/header.jsx';
+import Toaster from 'toaster/toaster.jsx';
 import RouteTransition from 'route-transition.jsx';
 
 let Index = (props) =>
   (<div>
+    <Toaster/>
     <Header />
     <RouteTransition pathname={props.currentPath}>
       {props.children}

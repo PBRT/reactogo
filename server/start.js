@@ -6,7 +6,8 @@ var WebpackDevServer = require('webpack-dev-server');
 
 // handle the code updates client side
 config.entry.unshift(
-  'webpack-dev-server/client?http://0.0.0.0:3000'
+  'webpack-dev-server/client?http://0.0.0.0:3000',
+  'webpack/hot/only-dev-server'
 );
 
 var compiler = webpack(config);
@@ -21,6 +22,7 @@ var devServer = new WebpackDevServer(compiler, {
   quiet: false,
   noInfo: false,
   stats: { colors: true },
+  hot: true,
 });
 
 // launch webpack dev server TODO: maybe use an env var for the webpack-dev-server port

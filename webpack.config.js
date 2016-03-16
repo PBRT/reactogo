@@ -28,9 +28,8 @@ var config = {
     loaders: [
       {
         test:/\.(js|jsx)?$/,
-        loader: 'babel',
+        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015,plugins[]=add-module-exports'],
         exclude: /(node_modules)/,
-        query: { presets:['es2015', 'react'], plugins: ['add-module-exports']}
       },
       { test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/},
       { test: /\.(png|jpg|svg)?$/, loader: 'file-loader', exclude: /node_modules/},
@@ -40,6 +39,7 @@ var config = {
   },
   plugins: [
     providePlugin,
+    new Webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     modulesDirectories: [

@@ -18,6 +18,7 @@ Kickstater project for quickly build your SAP including the last features of the
   * [Fontastic Icons](http://fontastic.me/)
   * [Fetch API](https://github.com/github/fetch)
   * [Side Menu Mobile](https://github.com/Mango/slideout)
+  * [React Hot Loader](http://gaearon.github.io/react-hot-loader)
   * SVG Spinner
   * Global UI Kit
   * ExpressJS
@@ -51,6 +52,7 @@ And go to [localhost:3000](http://localhost:3000)in your favourite browser. It w
   * Data : Handle by Redux in a global IMMUTABLE state of the app. Check the model section underneath.
   * Firebase facebook login
   * React Modals
+  * React Hot Loader: Update your react components without reload the page and keeping the main state!
 
 ## UI Customisation
 
@@ -100,5 +102,4 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
 
   * Build the main component in an isomorphic way to be SEO friendly
   * Production store configuration
-  * Hot module replacement
 

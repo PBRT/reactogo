@@ -1,5 +1,5 @@
 import Firebase from 'firebase';
-const FirebaseInstance = new Firebase('https://intense-fire-563.firebaseio.com');
+const FirebaseInstance = new Firebase(window.ENV.firebaseApp);
 
 export function getFirebaseInstance() {
   return FirebaseInstance;

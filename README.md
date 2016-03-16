@@ -1,43 +1,52 @@
 ### ReacToGo
 
-Kickstater project for quickly build your SAP including the last features of the web. The projects contains a skeletton of an app and example of components. It's an ALL-IN-ONE :
-  * [Stylus preprocessing](https://learnboost.github.io/stylus/)
-  * [Webpack building and webpack dev server](http://webpack.github.io/)
-  * [Stylus export loader] (https://github.com/PBRT/stylus-export-loader)
-  * [React](https://facebook.github.io/react/)
-  * [React Router](https://github.com/rackt/react-router)
-  * [React Motion](https://github.com/chenglou/react-motion)
-  * [Redux](http://redux.js.org/)
-  * [Redux React Router](https://github.com/reactjs/react-router-redux)
-  * [Redux Immutable](https://github.com/indexiatech/redux-immutablejs)
-  * [ImmutableJS](https://facebook.github.io/immutable-js/)
-  * [VelocityJS](http://julian.com/research/velocity/)
+A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application
+
   * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
-  * [Firebase](https://www.firebase.com)
-  * [React Modal](https://github.com/rackt/react-modal)
-  * [Fontastic Icons](http://fontastic.me/)
   * [Fetch API](https://github.com/github/fetch)
-  * [Side Menu Mobile](https://github.com/Mango/slideout)
+  * [Firebase](https://www.firebase.com)
+  * [Fontastic Icons](http://fontastic.me/)
+  * [ImmutableJS](https://facebook.github.io/immutable-js/)
   * [React Hot Loader](http://gaearon.github.io/react-hot-loader)
+  * [React Modal](https://github.com/rackt/react-modal)
+  * [React Motion](https://github.com/chenglou/react-motion)
+  * [React Router](https://github.com/rackt/react-router)
+  * [React](https://facebook.github.io/react/)
+  * [Redux Immutable](https://github.com/indexiatech/redux-immutablejs)
+  * [Redux React Router](https://github.com/reactjs/react-router-redux)
+  * [Redux](http://redux.js.org/)
+  * [Side Menu Mobile](https://github.com/Mango/slideout)
+  * [Stylus export loader] (https://github.com/PBRT/stylus-export-loader)
+  * [Stylus preprocessing](https://learnboost.github.io/stylus/)
+  * [VelocityJS](http://julian.com/research/velocity/)
+  * [Webpack building and webpack dev server](http://webpack.github.io/)
   * SVG Spinner
   * Global UI Kit
   * ExpressJS
 
 ## Motivations
 
-Tired to build all time the same basic structure for POC/Production projects, I built this kickstarter to get in speed easily.
+I spent a lot of time to make these differents librairies works together. For avoiding to re-do it for every project I'm working on, I decide to build this kickstarter, and update it as soon as needed!
 
 ## Installation
 
 Simply for this project on your local machine and then :
 
 ``` cd reacToGo ```
-
 ``` npm install ```
-
 ``` npm run start ```
 
-And go to [localhost:3000](http://localhost:3000)in your favourite browser. It will start the ```webpack-dev-server``` on the 3000 port and proxy all the requests to your future production server (expressjs) on the port 9000. So you can also develop all your endpoints while having hot reload enable.
+And go to [localhost:3000](http://localhost:3000) in your favourite browser.
+It will start the ```webpack-dev-server``` on the 3000 port and proxy all the requests to your future production server (expressjs) on the port 9000. This enable to have automatic reload on server side code update.
+
+Also, the ```hot``` mode is set to true, i.e. you can update the style, the JSX code and the app will be updated keeping the state without reloading the page.
+
+## Environement variables
+
+You need to set up your Firebase environment variable to have the login system. In your firebase app, you need to set up the facebook auth and put this in your variables :
+
+```export FIREBASE_URL="https://YOUR-APP.firebaseio.com"``
+
 
 ## Features
 
@@ -53,10 +62,11 @@ And go to [localhost:3000](http://localhost:3000)in your favourite browser. It w
   * Firebase facebook login
   * React Modals
   * React Hot Loader: Update your react components without reload the page and keeping the main state!
+  * Side Menu responsive
 
 ## UI Customisation
 
-If you want more bootstrap components, check the ```bootstrap.config.js```file and allow all the components you wants. This file is after copyied in the dist folder for further build.
+If you want more bootstrap components, check the ```bootstrap.config.js``` file and allow all the components you wants. This file is after copyied in the dist folder for further build.
 
 ## Redux Model
 
@@ -71,7 +81,7 @@ Thanks to redux and its middlewares, the app state contain everything needed to 
     * Token: auth token by Firebase
     * uid: User id
     * provider: facebook
-    * user: User info from facebool
+    * user: User info from facebook
   * Modals:
     * isLoginModalOpen: bool
 
@@ -102,4 +112,4 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
 
   * Build the main component in an isomorphic way to be SEO friendly
   * Production store configuration
-
+  * Implement testing (JEST)

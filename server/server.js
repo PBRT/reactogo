@@ -4,6 +4,8 @@ var favicon = require('serve-favicon');
 var bodyParser = require('body-parser');
 var compression = require('compression');
 
+const firebaseApp = process.env.FIREBASE_URL;
+
 var app = express();
 
 // Enable gzip
@@ -26,7 +28,9 @@ app.set('view engine', 'ejs');
 
 // Render files
 app.get('*', function (req, res) {
-  res.render('index', {reactContent: ''});
+  res.render('index', {ENV: JSON.stringify({
+    firebaseApp: firebaseApp
+  })});
 });
 
 

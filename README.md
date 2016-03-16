@@ -112,4 +112,4 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
 
   * Build the main component in an isomorphic way to be SEO friendly
   * Production store configuration
-  * Implement testing (JEST)
+  * Implement testing (JEST/other)

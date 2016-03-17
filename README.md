@@ -1,6 +1,10 @@
-### ReacToGo
+# ReacToGo
 
-A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application
+A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application.
+
+Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
+
+This boilerplate includes :
 
   * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
   * [Fetch API](https://github.com/github/fetch)

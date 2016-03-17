@@ -26,7 +26,7 @@ A simple boilerplate including the best concepts and libraries related to React/
 
 ## Motivations
 
-I spent a lot of time to make these differents librairies works together. For avoiding to re-do it for every project I'm working on, I decide to build this kickstarter, and update it as soon as needed!
+I spent a lot of time to make these differents librairies work together. For avoiding to re-do it for every projects I'm working on, I decide to build this kickstarter, and update it as soon as needed!
 
 ## Installation
 

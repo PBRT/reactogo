@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 var colors = require('colors');
 var webpack = require('webpack');
-var config = require('../webpack.config.js');
+var config = require('../webpack.development.config.js');
 var WebpackDevServer = require('webpack-dev-server');
 
 // handle the code updates client side

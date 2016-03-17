@@ -1,6 +1,5 @@
-var _ = require('underscore');
 var Webpack = require('webpack');
-var config = _.clone(require('./webpack.config.js'));
+var config = Object.assign({}, require('./webpack.config.js'));
 
 config.plugins = Array.prototype.concat(
   config.plugins, [

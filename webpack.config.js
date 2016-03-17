@@ -27,19 +27,33 @@ var config = {
   module: {
     loaders: [
       {
+        id: 'jsx',
         test:/\.(js|jsx)?$/,
-        loaders: ['react-hot', 'babel?presets[]=react,presets[]=es2015,plugins[]=add-module-exports'],
+        loaders: ['babel?presets[]=react,presets[]=es2015,plugins[]=add-module-exports', 'eslint-loader'],
         exclude: /(node_modules)/,
       },
-      { test: /\.jsx?$/, loader: 'eslint-loader', exclude: /node_modules/},
-      { test: /\.(png|jpg|svg)?$/, loader: 'file-loader', exclude: /node_modules/},
-      { test: /\.(otf|eot|woff|ttf)$/, loader: 'file-loader', exclude: /node_modules/},
-      { test: /\.(styl|css)$/, loader: 'style-loader!css-loader!stylus-loader', exclude: /(node_modules)/},
+      {
+        id: 'img',
+        test: /\.(png|jpg|svg)?$/,
+        loader: 'file-loader',
+        exclude: /node_modules/
+      },
+      {
+        id: 'font',
+        test: /\.(otf|eot|woff|ttf)$/,
+        loader: 'file-loader',
+        exclude: /node_modules/
+      },
+      {
+        id: 'style',
+        test: /\.(styl|css)$/,
+        loader: 'style-loader!css-loader!stylus-loader',
+        exclude: /(node_modules)/
+      },
     ]
   },
   plugins: [
     providePlugin,
-    new Webpack.HotModuleReplacementPlugin(),
   ],
   resolve: {
     modulesDirectories: [

@@ -1,3 +1,5 @@
+![alt tag](https://raw.githubusercontent.com/PBRT/reactogo/master/logo.png)
+
 # ReacToGo
 
 A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application.
@@ -20,7 +22,6 @@ This boilerplate includes :
   * [Redux React Router](https://github.com/reactjs/react-router-redux)
   * [Redux](http://redux.js.org/)
   * [Side Menu Mobile](https://github.com/Mango/slideout)
-  * [Stylus export loader] (https://github.com/PBRT/stylus-export-loader)
   * [Stylus preprocessing](https://learnboost.github.io/stylus/)
   * [VelocityJS](http://julian.com/research/velocity/)
   * [Webpack building and webpack dev server](http://webpack.github.io/)
@@ -49,7 +50,7 @@ Also, the ```hot``` mode is set to true, i.e. you can update the style, the JSX 
 
 You need to set up your Firebase environment variable to have the login system. In your firebase app, you need to set up the facebook auth and put this in your variables :
 
-```export FIREBASE_URL="https://YOUR-APP.firebaseio.com"``
+```export FIREBASE_URL="https://YOUR-APP.firebaseio.com"```
 
 
 ## Features
@@ -60,7 +61,7 @@ You need to set up your Firebase environment variable to have the login system. 
   * VelocityJS: Powerful animation lib to give life
   * React Router: Handle basic navigation between pages, part of the global state of the app.
   * React Motion: Physical animation lib
-  * UI Kit: the `UI.js` file is included globally. You can access to the value with `UI`. It contain all the JS var needed to build your UI kit (breakpoints, animations, size...)
+  * UI Kit: the `/style/ui-kit.json` file is included globally. You can access to the value with `UI`. It contain all the JS var needed to build your UI kit (breakpoints, animations, size...)
   * Media Queries: Included in the global state of the app. Accessible with functions in ```globals/style.js```.
   * Data : Handle by Redux in a global IMMUTABLE state of the app. Check the model section underneath.
   * Firebase facebook login
@@ -68,9 +69,81 @@ You need to set up your Firebase environment variable to have the login system. 
   * React Hot Loader: Update your react components without reload the page and keeping the main state!
   * Side Menu responsive
 
-## UI Customisation
+## UI Kit and Customization
+
+#### Bootstrap Components
 
 If you want more bootstrap components, check the ```bootstrap.config.js``` file and allow all the components you wants. This file is after copyied in the dist folder for further build.
+
+#### UI Kit
+
+The UI KIT is defined is the ```style/ui-kit.json```. It's accessible in both JS and Stylus with create only one source of truth for the UI Kit of the app :
+- JS: It's loaded with the ```json-loader``` of webpack and exposed globally via the ```ProvidePlugin``` under the name of ```UI```. So you can simply use it for inline-style directly in the React components files without even require it:
+
+```
+let s = getStyle();
+
+let MyReactComp = () => <div style={s.container}>My React Comp</div>;
+
+function getStyle() {
+  return {
+    container: {
+      textAlign: 'center',
+      marginTop: 60,
+      color: UI.lightGreen,
+    },
+  };
+}
+MyReactComp.displayName = 'MyReactComp';
+
+export default MyReactComp;
+```
+
+
+- STYLUS/CSS: The same file ```style/ui-kit.json``` is also loaded in the ```style/app.styl```. So the same UI-KIT can be use also for define main app classes if needed:
+
+```
+.button
+  padding: 10px
+  box-shadow: inset 0px -2px 0px rgba(0,0,0,0.10)
+  font-size: fontSM px
+  display: inline-block
+  border-radius: 2px
+  text-align: center
+  cursor: pointer
+
+@media (min-width: breakpointT px)
+  .button
+    padding: 10px 20px
+
+.button-primary
+  background-color: lightGreen
+  color: lightWhite
+  transition: background-color 0.4s;
+.button-primary:hover
+  background-color: darkGreen
+```
+
+This way, you can both use inline-style or stylus or both at the same time without any duplication of UI-KIT and then keep the things tidy!
+
+```
+let s = getStyle();
+
+let MyReactButton = () => <div style={s.container} className='button button-primary'>My React Button</div>;
+
+function getStyle() {
+  return {
+    container: {
+      textAlign: 'center',
+      marginTop: 60,
+      color: UI.lightGreen,
+    },
+  };
+}
+MyReactButton.displayName = 'MyReactButton';
+
+export default MyReactButton;
+```
 
 ## Redux Model
 
@@ -88,6 +161,10 @@ Thanks to redux and its middlewares, the app state contain everything needed to 
     * user: User info from facebook
   * Modals:
     * isLoginModalOpen: bool
+  * Side Menu:
+    * isSideMenuOpen: bool
+  * Toaster:
+    * List of messages: []
 
 ## Redux Librairies
 
@@ -117,3 +194,4 @@ The build gulp task is called in the ```npm postinstall``` so everything is hand
   * Build the main component in an isomorphic way to be SEO friendly
   * Production store configuration
   * Implement testing (JEST/other)
+  * Get Rid od GULP

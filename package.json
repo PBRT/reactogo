@@ -5,10 +5,9 @@
   "main": "app.js",
   "scripts": {
     "test": "test",
-    "build": "gulp build",
+    "build": "webpack --config webpack.production.config.js --progress --display-modules",
     "start": "node server/start.js",
-    "local": "gulp build:development",
-    "postinstall": "gulp build"
+    "postinstall": "webpack --config webpack.production.config.js --progress --display-modules"
   },
   "repository": {
     "type": "git",
@@ -30,6 +29,8 @@
     "bootstrap": "3.3.5",
     "bootstrap-styl": "4.0.5",
     "bootstrap-webpack": "0.0.3",
+    "clean-webpack-plugin": "0.1.8",
+    "copy-webpack-plugin": "1.1.1",
     "colors": "1.1.2",
     "compression": "1.6.0",
     "css-loader": "0.17.0",
@@ -44,9 +45,6 @@
     "fastclick": "1.0.6",
     "file-loader": "0.8.4",
     "firebase": "2.3.2",
-    "gulp": "3.9.0",
-    "gulp-load-plugins": "1.0.0",
-    "gulp-util": "3.0.6",
     "history": "1.13.0",
     "immutable": "3.7.6",
     "imports-loader": "0.6.4",

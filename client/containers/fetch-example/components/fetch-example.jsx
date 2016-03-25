@@ -5,7 +5,7 @@ export default class FetchExample extends React.Component {
     super(props);
   }
   componentDidMount() {
-    fetch('http://jsonplaceholder.typicode.com/posts/1', {
+    fetch('https://randomuser.me/api/', {
       method: 'get',
     })
     .then(res => res.json())

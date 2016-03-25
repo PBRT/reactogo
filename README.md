@@ -1,7 +1,5 @@
 ![alt tag](https://raw.githubusercontent.com/PBRT/reactogo/master/logo.png)
 
-# ReacToGo
-
 A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application.
 
 Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
@@ -177,21 +175,29 @@ Thanks to redux and its middlewares, the app state contain everything needed to 
 
 ## Production
 
-```npm run build```
-
-It will run the gulp task building for you a dist folder, copying the server one and running the webpack build using ```UglifyJsPlugin``` and ```DedupePlugin```. You can test your optimised build by running :
-
-```node dist/server/server.js```
+All the build scripts are in the ```package.json``` file. If you want to build locally, simply run ```npm run build```. It will trigger the ```webpack.production.config.js``` build system and will put you everything under the ```dist``` folder.
 
 
 ## Deployment
 
-I built my website using this boilerplate and deployed it to heroku the others ones. The Procfile is already set up so basically you just need to add your remote, push your master branch and see your app ALIVE!
-The build gulp task is called in the ```npm postinstall``` so everything is handled.
+For deploying the APP, simply push it to your CI app. There's already the ```npm postinstall``` script setup for you. If you are using [Heroku](https://www.heroku.com) the ```Procfile``` is already set up.
+
+If you want to do it manually, simply copy the following command and customize it if needed:
+```webpack --config webpack.production.config.js```
+
+## Webpack
+
+Here's the list of the Webpack dependencies and plugins:
+
+* [Webpack-Dev-Server](https://webpack.github.io/docs/webpack-dev-server.html): Used for development.
+* [Copy Webpack Plugin](https://github.com/kevlened/copy-webpack-plugin): Copy the server and config files to production.
+* [Clean Webpack Plugin](https://github.com/johnagan/clean-webpack-plugin): Clean the dist folder.
+* [DedupePlugin](https://github.com/webpack/docs/wiki/optimization) and [UglifyJsPlugin]((https://github.com/webpack/docs/wiki/optimization)): for optimizing the build size.
+* [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin): For exposing global values such as the UI KIT or Velocity.
+
 
 ## TO DO
 
-  * Build the main component in an isomorphic way to be SEO friendly
+  * Handle the Fetch Call in a Redux Way
   * Production store configuration
   * Implement testing (JEST/other)
-  * Get Rid od GULP

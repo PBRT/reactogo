@@ -14,7 +14,6 @@ config.plugins = Array.prototype.concat(
     new CopyWebpackPlugin([
       { from: './server', to: '../server' },
       { from: './package.json', to: '../package.json' },
-      { from: './bootstrap.config.js', to: '../bootstrap.config.js' },
     ]),
   ]
 );

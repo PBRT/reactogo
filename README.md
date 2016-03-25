@@ -6,7 +6,6 @@ Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.
 
 This boilerplate includes :
 
-  * [Bootstrap (imported with webpack)](https://github.com/gowravshekar/bootstrap-webpack)
   * [Fetch API](https://github.com/github/fetch)
   * [Firebase](https://www.firebase.com)
   * [Fontastic Icons](http://fontastic.me/)
@@ -53,7 +52,6 @@ You need to set up your Firebase environment variable to have the login system. 
 
 ## Features
 
-  * Bootstrap: Included via webpack, you can configure the item you want in the `/node_modules/bootstrap-webpack/bootstrap.config.less`. By default only the grid system is active.
   * Stylus: There is a default font and class in the `style` folder you can use
   * Images: Webpack handle the loading of all your images and files : `file-loader` 
   * VelocityJS: Powerful animation lib to give life
@@ -68,10 +66,6 @@ You need to set up your Firebase environment variable to have the login system. 
   * Side Menu responsive
 
 ## UI Kit and Customization
-
-#### Bootstrap Components
-
-If you want more bootstrap components, check the ```bootstrap.config.js``` file and allow all the components you wants. This file is after copyied in the dist folder for further build.
 
 #### UI Kit
 

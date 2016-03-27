@@ -1,6 +1,6 @@
 ![alt tag](https://raw.githubusercontent.com/PBRT/reactogo/master/logo.png)
 
-A simple boilerplate including the best concepts and libraries related to React/Redux and some basic UI components such as Modal or Side Menu. Everything ready to build a performant, immutable and responsive web application.
+A simple Boilerplate including the best concepts and libraries of **React** and **Redux** plus some useful UI components (Toaster, Modals, Responsive Side Menu). Everything ready to build a **Performant**, **Immutable** and **Responsive** web application, including simple example of usage. Ideal for starting a project from scratch.
 
 Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
 
@@ -212,13 +212,10 @@ webpack --config webpack.production.config.js
 Here's the list of the Webpack dependencies and plugins:
 
 * [Webpack-Dev-Server](https://webpack.github.io/docs/webpack-dev-server.html): Used for development.
-* [Copy Webpack Plugin](https://github.com/kevlened/copy-webpack-plugin): Copy the server and config files to production.
-* [Clean Webpack Plugin](https://github.com/johnagan/clean-webpack-plugin): Clean the dist folder.
 * [DedupePlugin](https://github.com/webpack/docs/wiki/optimization) and [UglifyJsPlugin]((https://github.com/webpack/docs/wiki/optimization)): for optimizing the build size.
 * [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin): For exposing global values such as the UI KIT or Velocity.
 
 
 ## TO DO
 
-  * Handle the Fetch Call in a Redux Way
   * Production store configuration

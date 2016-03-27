@@ -12,7 +12,8 @@ let Home = () =>
   (<div style={s.container}>
     <Spinner />
     <h2 className='text-center' style={s.subtitle}>
-      Including Webpack, React, React-Router, ImmutableJS, Redux, VelocityJS, React Motion, Stylus, Fetch API Polyfill
+      Including Webpack, React, React-Router, ImmutableJS, Redux, VelocityJS,
+       React Motion, Stylus, JEST, Fetch API Polyfill
     </h2>
     <div className='flex text-center' style={s.row}>
       <div className='flex-1'>
@@ -26,7 +27,6 @@ let Home = () =>
     </div>
     <h2>Fork the project and run npm install</h2>
   </div>);
-
 
 function getStyle() {
   return {
@@ -46,6 +46,7 @@ function getStyle() {
     },
   };
 }
+
 Home.displayName = 'Home';
 
 export default connect((state) => ({viewport: state.get('viewport')}))(Home);

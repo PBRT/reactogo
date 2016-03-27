@@ -10,6 +10,7 @@ This boilerplate includes :
   * [Firebase](https://www.firebase.com)
   * [Fontastic Icons](http://fontastic.me/)
   * [ImmutableJS](https://facebook.github.io/immutable-js/)
+  * [JEST](https://facebook.github.io/jest/)
   * [React Hot Loader](http://gaearon.github.io/react-hot-loader)
   * [React Modal](https://github.com/rackt/react-modal)
   * [React Motion](https://github.com/chenglou/react-motion)
@@ -34,9 +35,12 @@ I spent a lot of time to make these differents librairies work together. For avo
 
 Simply for this project on your local machine and then :
 
-``` cd reacToGo ```
-``` npm install ```
-``` npm run start ```
+
+```sh
+$ cd reacToGo
+$ npm install
+$ npm run start
+```
 
 And go to [localhost:3000](http://localhost:3000) in your favourite browser.
 It will start the ```webpack-dev-server``` on the 3000 port and proxy all the requests to your future production server (expressjs) on the port 9000. This enable to have automatic reload on server side code update.
@@ -47,8 +51,9 @@ Also, the ```hot``` mode is set to true, i.e. you can update the style, the JSX 
 
 You need to set up your Firebase environment variable to have the login system. In your firebase app, you need to set up the facebook auth and put this in your variables :
 
-```export FIREBASE_URL="https://YOUR-APP.firebaseio.com"```
-
+```sh
+ export FIREBASE_URL="https://YOUR-APP.firebaseio.com"
+```
 
 ## Features
 
@@ -72,7 +77,7 @@ You need to set up your Firebase environment variable to have the login system. 
 The UI KIT is defined is the ```style/ui-kit.json```. It's accessible in both JS and Stylus with create only one source of truth for the UI Kit of the app :
 - JS: It's loaded with the ```json-loader``` of webpack and exposed globally via the ```ProvidePlugin``` under the name of ```UI```. So you can simply use it for inline-style directly in the React components files without even require it:
 
-```
+```js
 let s = getStyle();
 
 let MyReactComp = () => <div style={s.container}>My React Comp</div>;
@@ -94,7 +99,7 @@ export default MyReactComp;
 
 - STYLUS/CSS: The same file ```style/ui-kit.json``` is also loaded in the ```style/app.styl```. So the same UI-KIT can be use also for define main app classes if needed:
 
-```
+```html
 .button
   padding: 10px
   box-shadow: inset 0px -2px 0px rgba(0,0,0,0.10)
@@ -118,7 +123,7 @@ export default MyReactComp;
 
 This way, you can both use inline-style or stylus or both at the same time without any duplication of UI-KIT and then keep the things tidy!
 
-```
+```js
 let s = getStyle();
 
 let MyReactButton = () => <div style={s.container} className='button button-primary'>My React Button</div>;
@@ -169,15 +174,38 @@ Thanks to redux and its middlewares, the app state contain everything needed to 
 
 ## Production
 
-All the build scripts are in the ```package.json``` file. If you want to build locally, simply run ```npm run build```. It will trigger the ```webpack.production.config.js``` build system and will put you everything under the ```dist``` folder.
+All the build scripts are in the ```package.json``` file. If you want to build locally, simply run :
 
+```sh
+$ npm run build
+```
+
+It will trigger the ```webpack.production.config.js``` build system and will put you everything under the ```dist``` folder.
+
+## Tests
+
+The unit test are done with [JEST](https://facebook.github.io/jest/) and triggered after each build (or deployments). You can launch them manually via:
+
+```sh
+$ npm run test
+```
+
+The configuration is described in the ```package.json``` file. A nice improvement would be to run those with Webpack.
 
 ## Deployment
 
-For deploying the APP, simply push it to your CI app. There's already the ```npm postinstall``` script setup for you. If you are using [Heroku](https://www.heroku.com) the ```Procfile``` is already set up.
+For deploying the APP, simply push it to your CI app. I will trigger the build automatically with:
+
+```sh
+$ npm postinstall
+```
+
+If you are using [Heroku](https://www.heroku.com) the ```Procfile``` is already set up.
 
 If you want to do it manually, simply copy the following command and customize it if needed:
-```webpack --config webpack.production.config.js```
+```sh
+webpack --config webpack.production.config.js
+```
 
 ## Webpack
 
@@ -194,4 +222,3 @@ Here's the list of the Webpack dependencies and plugins:
 
   * Handle the Fetch Call in a Redux Way
   * Production store configuration
-  * Implement testing (JEST/other)

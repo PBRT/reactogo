@@ -12,7 +12,7 @@ var app = express();
 app.use(compression());
 
 // Serve dist
-app.use(express.static(path.resolve(__dirname, '../public')));
+app.use(express.static(path.resolve(__dirname, '../dist')));
 
 // Parse json for mails
 app.use(bodyParser.json());

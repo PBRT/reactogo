@@ -20,7 +20,7 @@ var config = {
 
   entry: ['./client/app.jsx'],
   output: {
-    path: path.resolve(__dirname, 'dist', 'public'),
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   devtool: 'source-map',

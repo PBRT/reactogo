@@ -1,8 +1,13 @@
 .spinner-path
-  stroke-dasharray: 2116
-  stroke-dashoffset: 2116
-  animation: dash 10s linear alternate infinite
+  stroke-dasharray: 509
+  stroke-dashoffset: 509
+  animation: dash-mobile 10s linear alternate infinite
 
+@media (min-width: breakpointT px)
+  .spinner-path
+    stroke-dasharray: 2116
+    stroke-dashoffset: 2116
+    animation: dash 10s linear alternate infinite
 
 @keyframes dash
   0% {
@@ -22,5 +27,26 @@
 
   100% {
     stroke-dashoffset: 1500;
+    fill: lightGreen;
+  }
+
+@keyframes dash-mobile
+  0% {
+    stroke-dashoffset: 509;
+    fill: #ffffff;
+  }
+
+  5% {
+    stroke-dashoffset: 509;
+    fill: #ffffff;
+  }
+
+  90% {
+    stroke-dashoffset: 100;
+    fill: lightGreen;
+  }
+
+  100% {
+    stroke-dashoffset: 100;
     fill: lightGreen;
   }

@@ -4,6 +4,8 @@ A simple Boilerplate including the best concepts and libraries of **React** and 
 
 Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
 
+Using the only UI kit concept explained in [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
+
 This boilerplate includes :
 
   * [Fetch API](https://github.com/github/fetch)
@@ -215,6 +217,9 @@ Here's the list of the Webpack dependencies and plugins:
 * [DedupePlugin](https://github.com/webpack/docs/wiki/optimization) and [UglifyJsPlugin]((https://github.com/webpack/docs/wiki/optimization)): for optimizing the build size.
 * [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin): For exposing global values such as the UI KIT or Velocity.
 
+## Contributions
+
+Every contributions is more than welcome! Simply create a PR and I will check it asap!
 
 ## TO DO
 

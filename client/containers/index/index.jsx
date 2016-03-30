@@ -55,6 +55,10 @@ export default class Index extends React.Component {
   render() {
     const props = this.props;
     const isMobile = this.props.viewport.get('isMobile');
+    const overlayStyle = Object.assign({}, s.overlay, {
+      height: $('body')[0].scrollHeight,
+    });
+    console.log(overlayStyle, $('body')[0]);
 
     return (<div>
       <Toaster/>
@@ -63,7 +67,7 @@ export default class Index extends React.Component {
         <Header />
         {isMobile && <div
           ref='overlay'
-          style={s.overlay}
+          style={overlayStyle}
           onClick={() => props.dispatch(closeSideMenu())}/>}
         <div style={handleStyle(s.pageContainer)}>
           {props.children}
@@ -77,7 +81,6 @@ function getStyle() {
   return {
     overlay: {
       width: '100%',
-      height: window.innerHeight,
       backgroundColor: 'rgba(0,0,0,0.4)',
       position: 'absolute',
       top: 0,

@@ -2,9 +2,10 @@
 
 A simple Boilerplate including the best concepts and libraries of **React** and **Redux** plus some useful UI components (Toaster, Modals, Responsive Side Menu). Everything ready to build a **Performant**, **Immutable** and **Responsive** web application, including simple example of usage. Ideal for starting a project from scratch.
 
-Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
+> Using the only UI kit concept explained in this article: [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
 
-> Using the only UI kit concept explained in [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
+
+Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
 
 This boilerplate includes :
 
@@ -25,9 +26,9 @@ This boilerplate includes :
   * [Stylus preprocessing](https://learnboost.github.io/stylus/)
   * [VelocityJS](http://julian.com/research/velocity/)
   * [Webpack building and webpack dev server](http://webpack.github.io/)
+  * [ExpressJS](https://expressjs.com/api.html)
+  * [Global UI Kit](https://medium.com/@PierreBeard/5a9c92eab32a)
   * SVG Spinner
-  * Global UI Kit
-  * ExpressJS
 
 ## Motivations
 
@@ -218,11 +219,8 @@ Here's the list of the Webpack dependencies and plugins:
 * [Webpack-Dev-Server](https://webpack.github.io/docs/webpack-dev-server.html): Used for development.
 * [DedupePlugin](https://github.com/webpack/docs/wiki/optimization) and [UglifyJsPlugin]((https://github.com/webpack/docs/wiki/optimization)): for optimizing the build size.
 * [ProvidePlugin](https://webpack.github.io/docs/list-of-plugins.html#provideplugin): For exposing global values such as the UI KIT or Velocity.
+* [DefinePlugin](https://webpack.github.io/docs/list-of-plugins.html#defineplugin) For setting up the NODE_ENV
 
 ## Contributions
 
 Every contributions is more than welcome! Simply create a PR and I will check it asap!
-
-## TO DO
-
-  * Production store configuration

@@ -18,7 +18,14 @@ let store;
 export function initializeStore() {
 
   const logger = createLogger({stateTransformer});
-  const createStoreWithMiddleware = applyMiddleware(thunk, promise, logger)(createStore);
+
+  let middleWares = [thunk, promise];
+
+  if (process.env.NODE_ENV !== 'production') {
+    middleWares = middleWares.concat([logger]);
+  }
+
+  const createStoreWithMiddleware = applyMiddleware.apply(null, middleWares)(createStore);
 
   store = createStoreWithMiddleware(appReducer);
   store.dispatch(setViewport(window.innerWidth));

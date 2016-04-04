@@ -58,7 +58,6 @@ export default class Index extends React.Component {
     const overlayStyle = Object.assign({}, s.overlay, {
       height: $('body')[0].scrollHeight,
     });
-    console.log(overlayStyle, $('body')[0]);
 
     return (<div>
       <Toaster/>

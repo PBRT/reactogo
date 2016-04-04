@@ -1,9 +1,9 @@
 // External libs
-var Webpack = require('webpack');
+var webpack = require('webpack');
 var path = require('path');
 
 // Put React as a global variable
-var providePlugin = new Webpack.ProvidePlugin({
+var providePlugin = new webpack.ProvidePlugin({
   'React': 'react',
   'Immutable': 'immutable',
   $: 'jquery',

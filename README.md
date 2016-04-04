@@ -4,7 +4,7 @@ A simple Boilerplate including the best concepts and libraries of **React** and 
 
 Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).
 
-Using the only UI kit concept explained in [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
+> Using the only UI kit concept explained in [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
 
 This boilerplate includes :
 
@@ -56,6 +56,8 @@ You need to set up your Firebase environment variable to have the login system. 
 ```sh
  export FIREBASE_URL="https://YOUR-APP.firebaseio.com"
 ```
+
+Thanks to the ```DefinePlugin``` the ```NODE_ENV='production'``` for productions build.
 
 ## Features
 

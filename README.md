@@ -2,7 +2,7 @@
 
 A simple Boilerplate including the best concepts and libraries of **React** and **Redux** plus some useful UI components (Toaster, Modals, Responsive Side Menu). Everything ready to build a **Performant**, **Immutable** and **Responsive** web application, including simple example of usage. Ideal for starting a project from scratch.
 
-> Using the only UI kit concept explained in this article: [UI KIT, Inline Styles and CSS Pre-processors](https://medium.com/@PierreBeard/5a9c92eab32a)
+> UI KIT concept explained in this article: [Share your happiness and your UI KIT](https://medium.com/@PierreBeard/share-your-happiness-and-your-ui-kit-5a9c92eab32a#.vfl3echw4)
 
 
 Check out the live version at [https://reactogo.herokuapp.com](https://reactogo.herokuapp.com).

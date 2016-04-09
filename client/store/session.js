@@ -1,6 +1,9 @@
 import Firebase from 'firebase';
-const FirebaseInstance = new Firebase(window.ENV.firebaseApp);
+let FirebaseInstance = '';
 
 export function getFirebaseInstance() {
+  if (FirebaseInstance === '') {
+    FirebaseInstance = new Firebase(window.ENV.firebaseApp);
+  }
   return FirebaseInstance;
 }

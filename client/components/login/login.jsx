@@ -20,6 +20,7 @@ let Login = (props) => {
           <div
             onClick={() => dispatch(login())}
             style={s.button}>Login with Facebook</div>
+          <div style={s.info}>It won't work if you didn't set up your FIREBASE ENV VAR and allow FB on it</div>
         </div>
       </ModalContainer>
       <div
@@ -52,6 +53,9 @@ function getStyle() {
       top: 20,
       right: 20,
       width: 12,
+    },
+    info: {
+      marginTop: 20,
     },
   };
 }

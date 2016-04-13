@@ -88,7 +88,7 @@ function getStyle() {
       display: 'none',
     },
     pageContainer: {
-      paddingTop: UI.headerHeight,
+      paddingTop: `${UI.headerHeight}px`,
       backgroundColor: UI.lightWhite,
       minHeight: window.innerHeight,
     },

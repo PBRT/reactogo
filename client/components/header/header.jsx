@@ -56,7 +56,7 @@ function getStyle() {
   return {
     container: {
       width: '100%',
-      height: UI.headerHeight,
+      height: `${UI.headerHeight}px`,
       backgroundColor: UI.lightGreen,
       display: 'flex',
       alignItems: 'center',

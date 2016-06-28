@@ -13,7 +13,7 @@ This boilerplate includes :
   * [Firebase](https://www.firebase.com)
   * [Fontastic Icons](http://fontastic.me/)
   * [ImmutableJS](https://facebook.github.io/immutable-js/)
-  * [JEST](https://facebook.github.io/jest/)
+  * [Karma Webpack](https://github.com/webpack/karma-webpack)
   * [React Hot Loader](http://gaearon.github.io/react-hot-loader)
   * [React Modal](https://github.com/rackt/react-modal)
   * [React Motion](https://github.com/chenglou/react-motion)
@@ -189,13 +189,17 @@ It will trigger the ```webpack.production.config.js``` build system and will put
 
 ## Tests
 
-The unit test are done with [JEST](https://facebook.github.io/jest/) and triggered after each build (or deployments). You can launch them manually via:
+The unit test are done with [Karma Webpack](https://github.com/webpack/karma-webpack) and triggered after each build (or deployments). You can launch them manually via:
 
 ```sh
 $ npm run test
 ```
 
-The configuration is described in the ```package.json``` file. A nice improvement would be to run those with Webpack.
+The command is described in the ```package.json``` file. So far only the reducers functions are tested as examples. The current configuration will take all the files ending with ```*.spec.js``` and process these with [Karma Webpack](https://github.com/webpack/karma-webpack).
+
+It's using [Mocha](https://mochajs.org/) for its simplicity, [Expect](https://github.com/mjackson/expect) for the assertions and [PhantomJS](https://github.com/ariya/phantomjs) for running those in the terminal.
+
+The whole testing configuration is available in the ```/tests/karma-conf.js```.
 
 ## Deployment
 

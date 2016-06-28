@@ -1,20 +1,20 @@
 import { combineReducers } from 'redux-immutable';
 
 // Reducers
-import login from './login-reducer.js';
-import modals from './modals-reducer.js';
-import viewport from './viewport-reducer.js';
-import fetchedDataReducer from './fetched-data-reducer.js';
+import { loginReducer } from './login/login.js';
+import { modalsReducer } from './modals/modals.js';
+import { viewportReducer } from './viewport/viewport.js';
+import { fetchedDataReducer } from './fetched-data/fetched-data.js';
+import { toastersReducer } from './toaster/toaster.js';
+import { sideMenuReducer } from './side-menu/side-menu.js';
 import routeReducer from './route-reducer.js';
-import toasterReducer from './toaster-reducer.js';
-import sideMenuReducer from './side-menu-reducer.js';
 
 const app = combineReducers({
-  viewport: viewport,
+  viewport: viewportReducer,
   routing: routeReducer,
-  modals: modals,
-  session: login,
-  toasters: toasterReducer,
+  modals: modalsReducer,
+  session: loginReducer,
+  toasters: toastersReducer,
   sideMenu: sideMenuReducer,
   fetchedData: fetchedDataReducer,
 });

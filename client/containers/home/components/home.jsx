@@ -13,7 +13,7 @@ let Home = () =>
     <Spinner />
     <h2 className='text-center' style={s.subtitle}>
       Including Webpack, React, React-Router, ImmutableJS, Redux, VelocityJS,
-       React Motion, Stylus, JEST, Fetch API Polyfill
+       React Motion, Stylus, Karma, Fetch API Polyfill
     </h2>
     <div className='flex text-center' style={s.row}>
       <div className='flex-1'>

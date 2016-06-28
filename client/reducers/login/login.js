@@ -1,14 +1,14 @@
 import { SUCCESS_LOGIN, FAIL_LOGIN, SUCCESS_LOGOUT } from 'auth/login.js';
 
-const intialState = Immutable.Map({
-  token: null,
-  uid: null,
-  provider: null,
+export const initialState = Immutable.fromJS({
+  token: '',
+  uid: '',
+  provider: '',
   user: {},
   isLoggedIn: false,
 });
 
-function login(state = intialState, action) {
+export const loginReducer = (state = initialState, action) => {
   switch(action.type) {
     case (SUCCESS_LOGIN): return Immutable.fromJS({
       isLoggedIn: true,
@@ -22,10 +22,9 @@ function login(state = intialState, action) {
         profileImageURL: action.payload.facebook.profileImageURL,
       }),
     });
-    case (FAIL_LOGIN): return intialState;
-    case (SUCCESS_LOGOUT): return intialState;
+    case (FAIL_LOGIN): return initialState;
+    case (SUCCESS_LOGOUT): return initialState;
     default: return state;
   }
 };
 
-export default login;

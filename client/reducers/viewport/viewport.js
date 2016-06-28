@@ -1,6 +1,6 @@
 import { SET_VIEWPORT } from 'viewport.js';
 
-const initialState = Immutable.Map({
+export const initialState = Immutable.Map({
   isMobile: false,
   isTablet: false,
   isTouchDevice: 'ontouchstart' in window || 'onmsgesturechange' in window,
@@ -8,7 +8,7 @@ const initialState = Immutable.Map({
 });
 
 // viewport handler
-function viewport(state = initialState, action) {
+export const viewportReducer = (state = initialState, action) => {
   switch(action.type) {
     case (SET_VIEWPORT):
       return state.merge(Immutable.Map({
@@ -21,4 +21,3 @@ function viewport(state = initialState, action) {
   }
 };
 
-export default viewport;

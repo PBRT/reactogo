@@ -14,7 +14,7 @@ import SideMenu from 'side-menu/side-menu.jsx';
 let s = getStyle();
 let slider;
 
-export default class Index extends React.Component {
+export class Index extends React.Component {
   constructor(props) {
     super(props);
   }

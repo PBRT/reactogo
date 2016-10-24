@@ -11,7 +11,7 @@ import { logout } from 'auth/login.js';
 
 let s = getStyle();
 
-export default class SideMenu extends React.Component {
+export class SideMenu extends React.Component {
   constructor(props) {
     super(props);
   }

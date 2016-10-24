@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 let s = getStyle();
 
-export default class Item extends React.Component {
+export class Item extends React.Component {
   constructor(props) {
     super(props);
     this.handleHover = this.handleHover.bind(this);

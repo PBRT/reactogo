@@ -1,28 +1,19 @@
 export const ADD_MESSAGE = 'ADD_MESSAGE';
 export const REMOVE_MESSAGE = 'REMOVE_MESSAGE';
 
-function addMessage(message, id, type) {
-  return {
-    type: ADD_MESSAGE,
-    message: {
-      text: message,
-      id: id,
-      type: type ? type : 'success',
-    },
-  };
-};
-
-export function removeMessage(id) {
-  return {
-    type: REMOVE_MESSAGE,
+const addMessage = (message, id, type) => ({
+  type: ADD_MESSAGE,
+  message: {
+    text: message,
     id: id,
-  };
-};
+    type: type ? type : 'success',
+  },
+});
 
-export function pushMessage(message, type) {
-  return dispatch => {
-    const id = new Date().getTime();
-    dispatch(addMessage(message, id, type));
-    setTimeout(() => dispatch(removeMessage(id)), 6000);
-  };
-}
+export const removeMessage = id => ({type: REMOVE_MESSAGE, id: id});
+
+export const pushMessage = (message, type) => dispatch => {
+  const id = new Date().getTime();
+  dispatch(addMessage(message, id, type));
+  setTimeout(() => dispatch(removeMessage(id)), 6000);
+};

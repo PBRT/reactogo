@@ -14,14 +14,15 @@ const checkLoginReducer = (state) => {
 };
 
 const genUserPayload = () => ({
-  uid: 'id1',
-  token: 'token',
-  provider: 'facebook',
-  facebook: {
+  user: {
+    photoURL: 'randomURL',
+    uid: 'id1',
     displayName: 'test',
     email: 'test@test.com',
-    id: 'id1',
-    profileImageURL: 'randomURL',
+  },
+  credential: {
+    accessToken: 'token',
+    provider: 'facebook.com',
   },
 });
 
@@ -43,13 +44,13 @@ describe('login reducer', () => {
     });
 
     expect(finalState.get('isLoggedIn')).toEqual(true);
-    expect(finalState.get('token')).toEqual(userPayload.token);
-    expect(finalState.get('uid')).toEqual(userPayload.uid);
-    expect(finalState.get('provider')).toEqual(userPayload.provider);
-    expect(finalState.getIn(['user', 'displayName'])).toEqual(userPayload.facebook.displayName);
-    expect(finalState.getIn(['user', 'email'])).toEqual(userPayload.facebook.email);
-    expect(finalState.getIn(['user', 'id'])).toEqual(userPayload.facebook.id);
-    expect(finalState.getIn(['user', 'profileImageURL'])).toEqual(userPayload.facebook.profileImageURL);
+    expect(finalState.get('token')).toEqual(userPayload.credential.accessToken);
+    expect(finalState.get('uid')).toEqual(userPayload.user.uid);
+    expect(finalState.get('provider')).toEqual(userPayload.credential.provider);
+    expect(finalState.getIn(['user', 'displayName'])).toEqual(userPayload.user.displayName);
+    expect(finalState.getIn(['user', 'email'])).toEqual(userPayload.user.email);
+    expect(finalState.getIn(['user', 'id'])).toEqual(userPayload.user.uid);
+    expect(finalState.getIn(['user', 'profileImageURL'])).toEqual(userPayload.user.photoURL);
 
     checkLoginReducer(finalState);
   });

@@ -12,14 +12,14 @@ export const loginReducer = (state = initialState, action) => {
   switch(action.type) {
     case (SUCCESS_LOGIN): return Immutable.fromJS({
       isLoggedIn: true,
-      uid: action.payload.uid,
-      token: action.payload.token,
-      provider: action.payload.provider,
+      uid: action.payload.user.uid,
+      token: action.payload.credential.accessToken,
+      provider: action.payload.credential.provider,
       user: Object.assign({}, state.user, {
-        displayName: action.payload.facebook.displayName,
-        email: action.payload.facebook.email,
-        id: action.payload.facebook.id,
-        profileImageURL: action.payload.facebook.profileImageURL,
+        displayName: action.payload.user.displayName,
+        email: action.payload.user.email,
+        id: action.payload.user.uid,
+        profileImageURL: action.payload.user.photoURL,
       }),
     });
     case (FAIL_LOGIN): return initialState;

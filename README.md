@@ -54,8 +54,10 @@ Also, the ```hot``` mode is set to true, i.e. you can update the style, the JSX 
 
 You need to set up your Firebase environment variable to have the login system. In your firebase app, you need to set up the facebook auth and put this in your variables :
 
-```sh
- export FIREBASE_URL="https://YOUR-APP.firebaseio.com"
+```
+ export FIREBASE_API_KEY="API KEY"
+ export FIREBASE_AUTH_DOMAIN="FULL AUTH DOMAIN"
+ export FIREBASE_DATABASE_URL="FULL DBB URL"
 ```
 
 Thanks to the ```DefinePlugin``` the ```NODE_ENV='production'``` for productions build.

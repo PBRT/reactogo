@@ -1,5 +1,6 @@
+import firebase from 'firebase';
+
 // Actions
-import { getFirebaseInstance } from 'session.js';
 import { closeModal } from 'modals.js';
 import { pushMessage } from 'toaster.js';
 import { browserHistory } from 'react-router';
@@ -14,28 +15,27 @@ function sucessLogin(payload) { return {type: SUCCESS_LOGIN, payload}; };
 function failLogin(error) { return {type: FAIL_LOGIN, error}; };
 function successLogout() { return {type: SUCCESS_LOGOUT}; };
 
-export function login() {
-  return (dispatch) => {
-    dispatch(requestLogin());
-    const firebaseRef = getFirebaseInstance();
-    return firebaseRef.authWithOAuthPopup('facebook', (error, authData) => {
-      if (error) {
-        dispatch(failLogin(error));
-        dispatch(pushMessage('Oops, something went wrong', 'error'));
-      } else {
-        dispatch(sucessLogin(authData));
-        dispatch(pushMessage('Login Succesful', 'success'));
-        dispatch(closeModal());
-      }
-    });
-  };
-}
+export const login = () => dispatch => {
+  dispatch(requestLogin());
 
-export function logout() {
-  return dispatch => {
-    browserHistory.push('/');
-    getFirebaseInstance().unauth();
-    dispatch(pushMessage('Logout Succesful', 'success'));
-    dispatch(successLogout());
-  };
-}
+  // Firebase
+  const auth = firebase.auth();
+  const provider = new firebase.auth.FacebookAuthProvider();
+
+  return auth.signInWithPopup(provider)
+  .then(authData => {
+    dispatch(sucessLogin(authData));
+    dispatch(pushMessage('Login Succesful', 'success'));
+    dispatch(closeModal());
+  })
+  .catch(error => {
+    dispatch(failLogin(error));
+    dispatch(pushMessage('Oops, something went wrong', 'error'));
+  });
+};
+
+export const logout = () => dispatch => firebase.auth().signOut().then(() => {
+  browserHistory.push('/');
+  dispatch(pushMessage('Logout Succesful', 'success'));
+  dispatch(successLogout());
+});

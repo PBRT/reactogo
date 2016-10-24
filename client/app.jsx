@@ -12,12 +12,16 @@ import { Provider } from 'react-redux';
 import { Router, browserHistory } from 'react-router';
 import { syncHistoryWithStore } from 'react-router-redux';
 import { initializeStore } from './store/configureStore.js';
+import { initializeApp } from 'firebase-conf.js';
 
 // Pages
 import Index from './containers/index/index.jsx';
 
 var FastClick = require('fastclick');
 FastClick.attach(document.body);
+
+// Firebase
+initializeApp();
 
 const rootRoute = {
   component: 'div',

@@ -20,7 +20,19 @@ let Login = (props) => {
           <div
             onClick={() => dispatch(login())}
             style={s.button}>Login with Facebook</div>
-          <div style={s.info}>It won't work if you didn't set up your FIREBASE ENV VAR and allow FB on it</div>
+          <div style={s.info}>
+            It won't work if you didn't set up the following ENV var :
+              <br/>
+              <br/>
+              <br/>
+              <div>FIREBASE_API_KEY</div>
+              <div>FIREBASE_AUTH_DOMAIN</div>
+              <div>FIREBASE_DATABASE_URL</div>
+            <br/>
+            <br/>
+            <br/>
+            You also need to enable Facebook login and set up the callback url as per as firebase doc!
+          </div>
         </div>
       </ModalContainer>
       <div
